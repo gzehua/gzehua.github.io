@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Android内存泄漏的8种可能 | zehua的个人博客</title>
+  <title>Android系统常用权限大全 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
+  <meta name="description" content="访问网络android.permission.INTERNET，访问网络连接，可能产生GPRS流量android.permission.CHANGE_WIFI_STATE  Wifi 改变状态android.permission.ACCESS_WIFI_STATE WiFi 状态android.permission.ACCESS_NETWORK_STATE 网络状态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android内存泄漏的8种可能">
-<meta property="og:url" content="http://www.gzehua.cn/cjuz76plt0000z4ug84c23885.html">
+<meta property="og:title" content="Android系统常用权限大全">
+<meta property="og:url" content="http://www.gzehua.cn/cjuz79fff00038gugtsjadcdi.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
+<meta property="og:description" content="访问网络android.permission.INTERNET，访问网络连接，可能产生GPRS流量android.permission.CHANGE_WIFI_STATE  Wifi 改变状态android.permission.ACCESS_WIFI_STATE WiFi 状态android.permission.ACCESS_NETWORK_STATE 网络状态">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T07:42:01.371Z">
+<meta property="og:updated_time" content="2019-04-27T07:41:34.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android内存泄漏的8种可能">
-<meta name="twitter:description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
+<meta name="twitter:title" content="Android系统常用权限大全">
+<meta name="twitter:description" content="访问网络android.permission.INTERNET，访问网络连接，可能产生GPRS流量android.permission.CHANGE_WIFI_STATE  Wifi 改变状态android.permission.ACCESS_WIFI_STATE WiFi 状态android.permission.ACCESS_NETWORK_STATE 网络状态">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -158,60 +158,151 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android内存泄漏的8种可能" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android系统常用权限大全" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Android内存泄漏的8种可能
+      Android系统常用权限大全
     </h1>
   
 
         
-        <a href="/cjuz76plt0000z4ug84c23885.html" class="archive-article-date">
-  	<time datetime="2016-05-15T03:32:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-15</time>
+        <a href="/cjuz79fff00038gugtsjadcdi.html" class="archive-article-date">
+  	<time datetime="2016-06-18T12:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​    Java是垃圾回收语言的一种，其优点是开发者无需特意<strong>管理内存分配</strong>，降低了应用由于<strong>局部故障(segmentation fault)</strong>导致崩溃，同时防止未释放的内存把<strong>堆栈(heap)</strong>挤爆的可能，所以写出来的代码更为安全。</p>
-<p>不幸的是，在Java中仍存在很多容易导致内存泄漏的<strong>逻辑可能</strong>(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出(out-of-memory，OOM)。</p>
+        <p><strong>访问网络</strong><br>android.permission.INTERNET，访问网络连接，可能产生GPRS流量<br>android.permission.CHANGE_WIFI_STATE  Wifi 改变状态<br>android.permission.ACCESS_WIFI_STATE WiFi 状态<br>android.permission.ACCESS_NETWORK_STATE 网络状态</p>
 <a id="more"></a>
-<p>一般内存泄漏(traditional memory leak)的原因是：当该对象的所有引用都已经释放了，对象仍未被释放。（译者注：<code>Cursor</code>忘记关闭等）<br>逻辑内存泄漏(logical memory leak)的原因是：当应用不再需要这个对象，当仍未释放该对象的所有引用。</p>
-<p><strong>如果持有对象的强引用，垃圾回收器是无法在内存中回收这个对象。</strong></p>
-<p>在Android开发中，最容易引发的内存泄漏问题的是Context。比如Activity的<code>Context</code>，就包含大量的内存引用，例如<code>View Hierarchies</code>和其他资源。一旦泄漏了<code>Context</code>，也意味泄漏它指向的所有对象。Android机器内存有限，太多的内存泄漏容易导致OOM。</p>
-<p>检测逻辑内存泄漏需要主观判断，特别是对象的生命周期并不清晰。幸运的是，<code>Activity</code>有着明确的生命周期，很容易发现泄漏的原因。Activity.onDestroy()被视为<code>Activity</code>生命的结束，程序上来看，它应该被销毁了，或者Android系统需要回收这些内存（译者注：当内存不够时，Android会回收看不见的<code>Activity</code>）。<br>如果这个方法执行完，在堆栈中仍存在持有该Activity的强引用，垃圾回收器就无法把它标记成已回收的内存，而我们本来目的就是要回收它！<br>结果就是<code>Activity</code>存活在它的生命周期之外。</p>
-<p><code>Activity</code>是重量级对象，应该让Android系统来处理它。然而，逻辑内存泄漏总是在不经意间发生。（译者注：曾经试过一个Activity导致20M内存泄漏）。在Android中，导致潜在内存泄漏的陷阱不外乎两种：</p>
-<ul>
-<li>全局进程(process-global)的static变量。这个无视应用的状态，持有<code>Activity</code>的强引用的怪物。</li>
-<li>活在<code>Activity</code>生命周期之外的线程。没有清空对<code>Activity</code>的强引用。</li>
-</ul>
-<p>检查一下你有没有遇到下列的情况。</p>
-<h2 id="Static-Activities"><a href="#Static-Activities" class="headerlink" title="Static Activities"></a>Static Activities</h2><p>在类中定义了静态<code>Activity</code>变量，把当前运行的<code>Activity</code>实例赋值于这个静态变量。<br>如果这个静态变量在<code>Activity</code>生命周期结束后没有清空，就导致内存泄漏。因为static变量是贯穿这个应用的生命周期的，所以被泄漏的<code>Activity</code>就会一直存在于应用的进程中，不会被垃圾回收器回收。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> static Activity activity;</div><div class="line"></div><div class="line">void setStaticActivity() &#123;</div><div class="line">  activity = this;</div><div class="line">&#125;</div><div class="line"></div><div class="line">View saButton = findViewById(R.id.sa_button);</div><div class="line">saButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">  @Override public void onClick(View v) &#123;</div><div class="line">    setStaticActivity();</div><div class="line">    nextActivity();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="Static-Views"><a href="#Static-Views" class="headerlink" title="Static Views"></a>Static Views</h2><p>类似的情况会发生在单例模式中，如果<code>Activity</code>经常被用到，那么在内存中保存一个实例是很实用的。正如之前所述，强制延长<code>Activity</code>的生命周期是相当危险而且不必要的，无论如何都不能这样做。</p>
-<p>特殊情况：如果一个View初始化耗费大量资源，而且在一个<code>Activity</code>生命周期内保持不变，那可以把它变成static，加载到视图树上(View Hierachy)，像这样，当<code>Activity</code>被销毁时，应当释放资源。（译者注：示例代码中并没有释放内存，把这个static view置null即可，但是还是不建议用这个static view的方法）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">static view;</div><div class="line"></div><div class="line">void setStaticView() &#123;</div><div class="line">  view = findViewById(R.id.sv_button);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View svButton = findViewById(R.id.sv_button);</div><div class="line">svButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">  @Override public void onClick(View v) &#123;</div><div class="line">    setStaticView();</div><div class="line">    nextActivity();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="Inner-Classes"><a href="#Inner-Classes" class="headerlink" title="Inner Classes"></a>Inner Classes</h2><p>继续，假设<code>Activity</code>中有个内部类，这样做可以提高可读性和封装性。将如我们创建一个内部类，而且持有一个静态变量的引用，恭喜，内存泄漏就离你不远了（译者注：销毁的时候置空，嗯）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">   private static Object inner;</div><div class="line"></div><div class="line">   void createInnerClass() &#123;</div><div class="line">    class InnerClass &#123;</div><div class="line">    &#125;</div><div class="line">    inner = new InnerClass();</div><div class="line">&#125;</div><div class="line"></div><div class="line">View icButton = findViewById(R.id.ic_button);</div><div class="line">icButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override public void onClick(View v) &#123;</div><div class="line">        createInnerClass();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>内部类的优势之一就是可以访问外部类，不幸的是，导致内存泄漏的原因，就是内部类持有外部类实例的强引用。</p>
-<h2 id="Anonymous-Classes"><a href="#Anonymous-Classes" class="headerlink" title="Anonymous Classes"></a>Anonymous Classes</h2><p>相似地，匿名类也维护了外部类的引用。所以内存泄漏很容易发生，当你在<code>Activity</code>中定义了匿名的<code>AsyncTsk</code><br>。当异步任务在后台执行耗时任务期间，<code>Activity</code>不幸被销毁了（译者注：用户退出，系统回收），这个被<code>AsyncTask</code>持有的<code>Activity</code>实例就不会被垃圾回收器回收，直到异步任务结束。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">void startAsyncTask() &#123;</div><div class="line">    new AsyncTask&lt;Void, Void, Void&gt;() &#123;</div><div class="line">        @Override protected Void doInBackground(Void... params) &#123;</div><div class="line">            while(true);</div><div class="line">        &#125;</div><div class="line">    &#125;.execute();</div><div class="line">&#125;</div><div class="line"></div><div class="line">super.onCreate(savedInstanceState);</div><div class="line">setContentView(R.layout.activity_main);</div><div class="line">View aicButton = findViewById(R.id.at_button);</div><div class="line">aicButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override public void onClick(View v) &#123;</div><div class="line">        startAsyncTask();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h2><p>同样道理，定义匿名的<code>Runnable</code>，用匿名类<code>Handler</code>执行。<code>Runnable</code>内部类会持有外部类的隐式引用，被传递到<code>Handler</code>的消息队列<code>MessageQueue</code>中，在<code>Message</code>消息没有被处理之前，<code>Activity</code>实例不会被销毁了，于是导致内存泄漏。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">void createHandler() &#123;</div><div class="line">    new Handler() &#123;</div><div class="line">        @Override public void handleMessage(Message message) &#123;</div><div class="line">            super.handleMessage(message);</div><div class="line">        &#125;</div><div class="line">    &#125;.postDelayed(new Runnable() &#123;</div><div class="line">        @Override public void run() &#123;</div><div class="line">            while(true);</div><div class="line">        &#125;</div><div class="line">    &#125;, Long.MAX_VALUE &gt;&gt; 1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View hButton = findViewById(R.id.h_button);</div><div class="line">hButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override public void onClick(View v) &#123;</div><div class="line">        createHandler();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h2><p>我们再次通过Thread和TimerTask来展现内存泄漏。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">void spawnThread() &#123;</div><div class="line">    new Thread() &#123;</div><div class="line">        @Override public void run() &#123;</div><div class="line">            while(true);</div><div class="line">        &#125;</div><div class="line">    &#125;.start();</div><div class="line">&#125;</div><div class="line"></div><div class="line">View tButton = findViewById(R.id.t_button);</div><div class="line">tButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">  @Override public void onClick(View v) &#123;</div><div class="line">      spawnThread();</div><div class="line">      nextActivity();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="TimerTask"><a href="#TimerTask" class="headerlink" title="TimerTask"></a>TimerTask</h2><p>只要是匿名类的实例，不管是不是在工作线程，都会持有<code>Activity</code>的引用，导致内存泄漏。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">void scheduleTimer() &#123;</div><div class="line">    new Timer().schedule(new TimerTask() &#123;</div><div class="line">        @Override</div><div class="line">        public void run() &#123;</div><div class="line">            while(true);</div><div class="line">        &#125;</div><div class="line">    &#125;, Long.MAX_VALUE &gt;&gt; 1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View ttButton = findViewById(R.id.tt_button);</div><div class="line">ttButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override public void onClick(View v) &#123;</div><div class="line">        scheduleTimer();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="Sensor-Manager"><a href="#Sensor-Manager" class="headerlink" title="Sensor Manager"></a>Sensor Manager</h2><p>最后，通过Context.getSystemService(int name)可以获取系统服务。这些服务工作在各自的进程中，帮助应用处理后台任务，处理硬件交互。如果需要使用这些服务，可以注册监听器，这会导致服务持有了<code>Context</code>的引用，如果在<code>Activity</code>销毁的时候没有注销这些监听器，会导致内存泄漏。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public void registerListener() &#123;</div><div class="line">        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);</div><div class="line">        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ALL);</div><div class="line">        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_FASTEST);</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> View smButton = findViewById(R.id.sm_button);</div><div class="line"> smButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">     @Override public void onClick(View v) &#123;</div><div class="line">         registerListener();</div><div class="line">         nextActivity();</div><div class="line">     &#125;</div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
-<p>Memory Leak 8 – Sensor Manager</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>看过那么多会导致内存泄漏的例子，容易导致吃光手机的内存使垃圾回收处理更为频发，甚至最坏的情况会导致OOM。垃圾回收的操作是很昂贵的开销，会导致肉眼可见的卡顿。所以，实例化的时候注意持有的引用链，并经常进行内存泄漏检查。</p>
+<p><strong>录制视频</strong><br>android.permission.CAMERA<br>android.permission.RECORD_AUDIO<br>android.permission.WRITE_EXTERNAL_STORAGE</p>
+<p><strong>底层访问权限</strong><br>android.permission.CWJ_GROUP，允许CWJ账户组访问底层信息</p>
+<p><strong>手机优化大师扩展权限</strong><br>android.permission.CELL_PHONE_MASTER_EX，手机优化大师扩展权限</p>
+<p><strong>控制定位更新</strong><br>android.permission.CONTROL_LOCATION_UPDATES，允许获得移动网络定位信息改变</p>
+<p><strong>删除缓存文件</strong><br>android.permission.DELETE_CACHE_FILES，允许应用删除缓存文件</p>
+<p><strong>删除应用</strong><br>android.permission.DELETE_PACKAGES，允许程序删除应用</p>
+<p><strong>电源管理</strong><br>android.permission.DEVICE_POWER，允许访问底层电源管理</p>
+<p><strong>应用诊断</strong><br>android.permission.DIAGNOSTIC，允许程序到RW到诊断资源</p>
+<p><strong>禁用键盘锁</strong><br>android.permission.DISABLE_KEYGUARD，允许程序禁用键盘锁</p>
+<p><strong>转存系统信息</strong><br>android.permission.DUMP，允许程序获取系统dump信息从系统服务</p>
+<p><strong>状态栏控制</strong><br>android.permission.EXPAND_STATUS_BAR，允许程序扩展或收缩状态栏</p>
+<p><strong>工厂测试模式</strong><br>android.permission.FACTORY_TEST，允许程序运行工厂测试模式</p>
+<p><strong>使用闪光灯</strong><br>android.permission.FLASHLIGHT，允许访问闪光灯</p>
+<p><strong>强制后退</strong><br>android.permission.FORCE_BACK，允许程序强制使用back后退按键，无论Activity是否在顶层</p>
+<p><strong>访问账户Gmail列表</strong><br>android.permission.GET_ACCOUNTS，访问GMail账户列表</p>
+<p><strong>获取应用大小</strong><br>android.permission.GET_PACKAGE_SIZE，获取应用的文件大小</p>
+<p><strong>获取任务信息</strong><br>android.permission.GET_TASKS，允许程序获取当前或最近运行的应用</p>
+<p><strong>允许全局搜索</strong><br>android.permission.GLOBAL_SEARCH，允许程序使用全局搜索功能</p>
+<p><strong>硬件测试</strong><br>android.permission.HARDWARE_TEST，访问硬件辅助设备，用于硬件测试</p>
+<p><strong>注射事件</strong><br>android.permission.INJECT_EVENTS，允许访问本程序的底层事件，获取按键、轨迹球的事件流</p>
+<p><strong>安装定位提供</strong><br>android.permission.INSTALL_LOCATION_PROVIDER，安装定位提供</p>
+<p><strong>安装应用程序</strong><br>android.permission.INSTALL_PACKAGES，允许程序安装应用</p>
+<p><strong>内部系统窗口</strong><br>android.permission.INTERNAL_SYSTEM_WINDOW，允许程序打开内部窗口，不对第三方应用程序开放此权限</p>
+<p><strong>结束后台进程</strong><br>android.permission.KILL_BACKGROUND_PROCESSES，允许程序调用killBackgroundProcesses(String).方法结束后台进程</p>
+<p><strong>管理账户 </strong><br>android.permission.MANAGE_ACCOUNTS，允许程序管理AccountManager中的账户列表</p>
+<p><strong>管理程序引用</strong><br>android.permission.MANAGE_APP_TOKENS，管理创建、摧毁、Z轴顺序，仅用于系统</p>
+<p><strong>高级权限</strong><br>android.permission.MTWEAK_USER，允许mTweak用户访问高级系统权限</p>
+<p><strong>社区权限</strong><br>android.permission.MTWEAK_FORUM，允许使用mTweak社区权限</p>
+<p><strong>软格式化</strong><br>android.permission.MASTER_CLEAR，允许程序执行软格式化，删除系统配置信息</p>
+<p><strong>修改声音设置</strong><br>android.permission.MODIFY_AUDIO_SETTINGS，修改声音设置信息</p>
+<p><strong>修改电话状态</strong><br>android.permission.MODIFY_PHONE_STATE，修改电话状态，如飞行模式，但不包含替换系统拨号器界面</p>
+<p><strong>格式化文件系统</strong><br>android.permission.MOUNT_FORMAT_FILESYSTEMS，格式化可移动文件系统，比如格式化清空SD卡</p>
+<p><strong>挂载文件系统</strong><br>android.permission.MOUNT_UNMOUNT_FILESYSTEMS，挂载、反挂载外部文件系统</p>
+<p><strong>允许NFC通讯</strong><br>android.permission.NFC，允许程序执行NFC近距离通讯操作，用于移动支持</p>
+<p><strong>永久Activity</strong><br>android.permission.PERSISTENT_ACTIVITY，创建一个永久的Activity，该功能标记为将来将被移除</p>
+<p><strong>处理拨出电话</strong><br>android.permission.PROCESS_OUTGOING_CALLS，允许程序监视，修改或放弃播出电话</p>
+<p><strong>读取日程提醒</strong><br>android.permission.READ_CALENDAR，允许程序读取用户的日程信息</p>
+<p><strong>读取联系人</strong><br>android.permission.READ_CONTACTS，允许应用访问联系人通讯录信息</p>
+<p><strong>屏幕截图</strong><br>android.permission.READ_FRAME_BUFFER，读取帧缓存用于屏幕截图</p>
+<p><strong>读取收藏夹和历史记录</strong><br>com.android.browser.permission.READ_HISTORY_BOOKMARKS，读取浏览器收藏夹和历史记录</p>
+<p><strong>读取输入状态</strong><br>android.permission.READ_INPUT_STATE，读取当前键的输入状态，仅用于系统</p>
+<p><strong>读取系统日志</strong><br>android.permission.READ_LOGS，读取系统底层日志</p>
+<p><strong>读取电话状态</strong><br>android.permission.READ_PHONE_STATE，访问电话状态</p>
+<p><strong>读取短信内容</strong><br>android.permission.READ_SMS，读取短信内容</p>
+<p><strong>读取同步设置</strong><br>android.permission.READ_SYNC_SETTINGS，读取同步设置，读取Google在线同步设置</p>
+<p><strong>读取同步状态</strong><br>android.permission.READ_SYNC_STATS，读取同步状态，获得Google在线同步状态</p>
+<p><strong>重启设备</strong><br>android.permission.REBOOT，允许程序重新启动设备</p>
+<p><strong>开机自动允许</strong><br>android.permission.RECEIVE_BOOT_COMPLETED，允许程序开机自动运行</p>
+<p><strong>接收彩信</strong><br>android.permission.RECEIVE_MMS，接收彩信</p>
+<p><strong>接收短信</strong><br>android.permission.RECEIVE_SMS，接收短信</p>
+<p><strong>接收Wap Push</strong><br>android.permission.RECEIVE_WAP_PUSH，接收WAP PUSH信息</p>
+<p><strong>录音</strong><br>android.permission.RECORD_AUDIO，录制声音通过手机或耳机的麦克</p>
+<p><strong>排序系统任务</strong><br>android.permission.REORDER_TASKS，重新排序系统Z轴运行中的任务</p>
+<p><strong>结束系统任务</strong><br>android.permission.RESTART_PACKAGES，结束任务通过restartPackage(String)方法，该方式将在外来放弃</p>
+<p><strong>发送短信</strong><br>android.permission.SEND_SMS，发送短信</p>
+<p><strong>设置Activity观察其</strong><br>android.permission.SET_ACTIVITY_WATCHER，设置Activity观察器一般用于monkey测试</p>
+<p><strong>设置闹铃提醒</strong><br>com.android.alarm.permission.SET_ALARM，设置闹铃提醒</p>
+<p><strong>设置总是退出</strong><br>android.permission.SET_ALWAYS_FINISH，设置程序在后台是否总是退出</p>
+<p><strong>设置动画缩放</strong><br>android.permission.SET_ANIMATION_SCALE，设置全局动画缩放</p>
+<p><strong>设置调试程序</strong><br>android.permission.SET_DEBUG_APP，设置调试程序，一般用于开发</p>
+<p><strong>设置屏幕方向</strong><br>android.permission.SET_ORIENTATION，设置屏幕方向为横屏或标准方式显示，不用于普通应用</p>
+<p><strong>设置应用参数</strong><br>android.permission.SET_PREFERRED_APPLICATIONS，设置应用的参数，已不再工作具体查看addPackageToPreferred(String)介绍</p>
+<p><strong>设置进程限制</strong><br>android.permission.SET_PROCESS_LIMIT，允许程序设置最大的进程数量的限制</p>
+<p><strong>设置系统时间</strong><br>android.permission.SET_TIME，设置系统时间</p>
+<p><strong>设置系统时区</strong><br>android.permission.SET_TIME_ZONE，设置系统时区</p>
+<p><strong>设置桌面壁纸</strong><br>android.permission.SET_WALLPAPER，设置桌面壁纸</p>
+<p><strong>设置壁纸建议</strong><br>android.permission.SET_WALLPAPER_HINTS，设置壁纸建议</p>
+<p><strong>发送永久进程信号</strong><br>android.permission.SIGNAL_PERSISTENT_PROCESSES，发送一个永久的进程信号</p>
+<p><strong>状态栏控制</strong><br>android.permission.STATUS_BAR，允许程序打开、关闭、禁用状态栏</p>
+<p><strong>访问订阅内容</strong><br>android.permission.SUBSCRIBED_FEEDS_READ，访问订阅信息的数据库</p>
+<p><strong>写入订阅内容</strong><br>android.permission.SUBSCRIBED_FEEDS_WRITE，写入或修改订阅内容的数据库</p>
+<p><strong>显示系统窗口</strong><br>android.permission.SYSTEM_ALERT_WINDOW，显示系统窗口</p>
+<p><strong>更新设备状态</strong><br>android.permission.UPDATE_DEVICE_STATS，更新设备状态</p>
+<p><strong>使用证书</strong><br>android.permission.USE_CREDENTIALS，允许程序请求验证从AccountManager</p>
+<p><strong>使用SIP视频</strong><br>android.permission.USE_SIP，允许程序使用SIP视频服务</p>
+<p><strong>使用振动</strong><br>android.permission.VIBRATE，允许振动</p>
+<p><strong>唤醒锁定</strong><br>android.permission.WAKE_LOCK，允许程序在手机屏幕关闭后后台进程仍然运行</p>
+<p><strong>写入GPRS接入点设置</strong><br>android.permission.WRITE_APN_SETTINGS，写入网络GPRS接入点设置</p>
+<p><strong>写入日程提醒</strong><br>android.permission.WRITE_CALENDAR，写入日程，但不可读取</p>
+<p><strong>写入联系人</strong><br>android.permission.WRITE_CONTACTS，写入联系人，但不可读取</p>
+<p><strong>写入外部存储</strong><br>android.permission.WRITE_EXTERNAL_STORAGE，允许程序写入外部存储，如SD卡上写文件</p>
+<p><strong>写入Google地图数据</strong><br>android.permission.WRITE_GSERVICES，允许程序写入Google Map服务数据</p>
+<p><strong>写入收藏夹和历史记录</strong><br>com.android.browser.permission.WRITE_HISTORY_BOOKMARKS，写入浏览器历史记录或收藏夹，但不可读取</p>
+<p><strong>读写系统敏感设置</strong><br>android.permission.WRITE_SECURE_SETTINGS，允许程序读写系统安全敏感的设置项</p>
+<p><strong>读写系统设置</strong><br>android.permission.WRITE_SETTINGS，允许读写系统设置项</p>
+<p><strong>编写短信</strong><br>android.permission.WRITE_SMS，允许编写短信</p>
+<p><strong>写入在线同步设置</strong><br>android.permission.WRITE_SYNC_SETTINGS，写入Google在线同步设置</p>
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
 
+<p><strong>访问登记属性</strong><br>android.permission.ACCESS_CHECKIN_PROPERTIES ，读取或写入登记check-in数据库属性表的权限</p>
+<p><strong>获取错略位置</strong><br>android.permission.ACCESS_COARSE_LOCATION，通过WiFi或移动基站的方式获取用户错略的经纬度信息，定位精度大概误差在30~1500米</p>
+<p><strong>获取精确位置</strong><br>android.permission.ACCESS_FINE_LOCATION，通过GPS芯片接收卫星的定位信息，定位精度达10米以内</p>
+<p><strong>访问定位额外命令</strong><br>android.permission.ACCESS_LOCATION_EXTRA_COMMANDS，允许程序访问额外的定位提供者指令</p>
+<p><strong>GPS定位获取模拟定位信息</strong><br>android.permission.ACCESS_MOCK_LOCATION，获取模拟定位信息，一般用于帮助开发者调试应用</p>
+<p><strong>获取网络状态</strong><br>android.permission.ACCESS_NETWORK_STATE，获取网络信息状态，如当前的网络连接是否有效</p>
+<p><strong>访问Surface Flinger</strong><br>android.permission.ACCESS_SURFACE_FLINGER，Android平台上底层的图形显示支持，一般用于游戏或照相机预览界面和底层模式的屏幕截图</p>
+<p><strong>获取WiFi状态</strong><br>android.permission.ACCESS_WIFI_STATE，获取当前WiFi接入的状态以及WLAN热点的信息</p>
+<p><strong>账户管理</strong><br>android.permission.ACCOUNT_MANAGER，获取账户验证信息，主要为GMail账户信息，只有系统级进程才能访问的权限</p>
+<p><strong>验证账户</strong><br>android.permission.AUTHENTICATE_ACCOUNTS，允许一个程序通过账户验证方式访问账户管理ACCOUNT_MANAGER相关信息</p>
+<p><strong>电量统计</strong><br>android.permission.BATTERY_STATS，获取电池电量统计信息</p>
+<p><strong>绑定小插件</strong><br>android.permission.BIND_APPWIDGET，允许一个程序告诉appWidget服务需要访问小插件的数据库，只有非常少的应用才用到此权限</p>
+<p><strong>绑定设备管理</strong><br>android.permission.BIND_DEVICE_ADMIN，请求系统管理员接收者receiver，只有系统才能使用</p>
+<p><strong>绑定输入法</strong><br>android.permission.BIND_INPUT_METHOD ，请求InputMethodService服务，只有系统才能使用</p>
+<p><strong>绑定RemoteView</strong><br>android.permission.BIND_REMOTEVIEWS，必须通过RemoteViewsService服务来请求，只有系统才能用</p>
+<p><strong>绑定壁纸</strong><br>android.permission.BIND_WALLPAPER，必须通过WallpaperService服务来请求，只有系统才能用</p>
+<p><strong>使用蓝牙</strong><br>android.permission.BLUETOOTH，允许程序连接配对过的蓝牙设备</p>
+<p><strong>蓝牙管理</strong><br>android.permission.BLUETOOTH_ADMIN，允许程序进行发现和配对新的蓝牙设备</p>
+<p><strong>变成砖头</strong><br>android.permission.BRICK，能够禁用手机，非常危险，顾名思义就是让手机变成砖头</p>
+<p><strong>应用删除时广播</strong><br>android.permission.BROADCAST_PACKAGE_REMOVED，当一个应用在删除时触发一个广播</p>
+<p><strong>收到短信时广播</strong><br>android.permission.BROADCAST_SMS，当收到短信时触发一个广播</p>
+<p><strong>连续广播</strong><br>android.permission.BROADCAST_STICKY，允许一个程序收到广播后快速收到下一个广播</p>
+<p><strong>WAP PUSH广播</strong><br>android.permission.BROADCAST_WAP_PUSH，WAP PUSH服务收到后触发一个广播</p>
+<p><strong>拨打电话</strong><br>android.permission.CALL_PHONE，允许程序从非系统拨号器里输入电话号码</p>
+<p><strong>通话权限</strong><br>android.permission.CALL_PRIVILEGED，允许程序拨打电话，替换系统的拨号器界面</p>
+<p><strong>拍照权限</strong><br>android.permission.CAMERA，允许访问摄像头进行拍照</p>
+<p><strong>改变组件状态</strong><br>android.permission.CHANGE_COMPONENT_ENABLED_STATE，改变组件是否启用状态</p>
+<p><strong>改变配置</strong><br>android.permission.CHANGE_CONFIGURATION，允许当前应用改变配置，如定位</p>
+<p><strong>改变网络状态</strong><br>android.permission.CHANGE_NETWORK_STATE，改变网络状态如是否能联网</p>
+<p><strong>改变WiFi多播状态</strong><br>android.permission.CHANGE_WIFI_MULTICAST_STATE，改变WiFi多播状态</p>
+<p><strong>改变WiFi状态</strong><br>android.permission.CHANGE_WIFI_STATE，改变WiFi状态</p>
+<p><strong>清除应用缓存</strong><br>android.permission.CLEAR_APP_CACHE，清除应用缓存</p>
+<p><strong>清除用户数据</strong><br>android.permission.CLEAR_APP_USER_DATA，清除应用的用户数据</p>
+</uses-permission>
       
 
       
@@ -290,7 +381,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuz76plt0000z4ug84c23885.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuz79fff00038gugtsjadcdi.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,15 +395,20 @@
   
 <nav id="article-nav">
   
-    <a href="/cjuz76pm20001z4uglvtdmy7d.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/cjuz79ffj00048gug8fnhikxq.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Android中图片的三层缓存
+          SetContentView与LayoutInflater加载布局的源码分析
         
       </div>
     </a>
   
+  
+    <a href="/cjuz79ff700018gugd9fhc4fb.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android常用URI收藏“</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

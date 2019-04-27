@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
   <title>SetContentView与LayoutInflater加载布局的源码分析 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.探究SetContentView()方法 Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.">
+  <meta name="description" content="1.探究SetContentView()方法* Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.  1.1 Activity中的setContentView方法(三个重载方法)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SetContentView与LayoutInflater加载布局的源码分析">
-<meta property="og:url" content="http://www.gzehua.cn/cjuz76pmc0004z4ugz8lmn6xk.html">
+<meta property="og:url" content="http://www.gzehua.cn/cjuz79ffj00048gug8fnhikxq.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="1.探究SetContentView()方法 Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.">
+<meta property="og:description" content="1.探究SetContentView()方法* Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.  1.1 Activity中的setContentView方法(三个重载方法)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T07:42:37.634Z">
+<meta property="og:updated_time" content="2019-04-27T07:44:26.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SetContentView与LayoutInflater加载布局的源码分析">
-<meta name="twitter:description" content="1.探究SetContentView()方法 Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.">
+<meta name="twitter:description" content="1.探究SetContentView()方法* Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.  1.1 Activity中的setContentView方法(三个重载方法)">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
   
 
         
-        <a href="/cjuz76pmc0004z4ugz8lmn6xk.html" class="archive-article-date">
+        <a href="/cjuz79ffj00048gug8fnhikxq.html" class="archive-article-date">
   	<time datetime="2017-04-27T06:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
 </a>
         
@@ -178,13 +178,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><em>1.探究SetContentView()方法</em></strong></p>
+        <p><strong>1.探究SetContentView()方法*</strong></p>
 <p>Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.</p>
-<a id="more"></a>
 <ul>
-<li>1.1 Activity中的setContentView方法(三个重载方法)</li>
-</ul>
+<li>1.1 Activity中的setContentView方法(三个重载方法)<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(@LayoutRes <span class="keyword">int</span> layoutResID)</span> </span>&#123;</div><div class="line">    getWindow().setContentView(layoutResID);</div><div class="line">    initWindowDecorActionBar();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    getWindow().setContentView(view);</div><div class="line">    initWindowDecorActionBar();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(View view, ViewGroup.LayoutParams params)</span> </span>&#123;</div><div class="line">    getWindow().setContentView(view, params);</div><div class="line">    initWindowDecorActionBar();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在setContentView()方法中首先调用了getWindow()方法,进入该方法发现返回了一个Window类对象,变量名为mWindow然后调用了该对象的setContentView()方法</p>
@@ -299,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuz76pmc0004z4ugz8lmn6xk.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuz79ffj00048gug8fnhikxq.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,7 +314,7 @@
 <nav id="article-nav">
   
   
-    <a href="/cjuz76pm90003z4ugk5sdzv9f.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/cjuz79fff00038gugtsjadcdi.html" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Android系统常用权限大全</div>
       <i class="icon-circle-right"></i>
     </a>
