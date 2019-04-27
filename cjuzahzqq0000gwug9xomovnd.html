@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>ViewDragHelper(拖拽)的用法 | zehua的个人博客</title>
+  <title>Android中WebView基本使用 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ViewDragHelper是一个用来简化view拖拽操作的帮助类,解决了android中手势处理过于复杂的问题; 基本使用流程:​    a. 创建 ViewDragHelper mHelper = ViewDragHelper.create(this, 1.0f, new CallBack()); ​              参数1:上下文 ​              参数2:拖拽的灵敏度">
+  <meta name="description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ViewDragHelper(拖拽)的用法">
-<meta property="og:url" content="http://www.gzehua.cn/cjuzah3mr000ao0ug0uzuvlcj.html">
+<meta property="og:title" content="Android中WebView基本使用">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzahzqq0000gwug9xomovnd.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="ViewDragHelper是一个用来简化view拖拽操作的帮助类,解决了android中手势处理过于复杂的问题; 基本使用流程:​    a. 创建 ViewDragHelper mHelper = ViewDragHelper.create(this, 1.0f, new CallBack()); ​              参数1:上下文 ​              参数2:拖拽的灵敏度">
+<meta property="og:description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T08:58:08.525Z">
+<meta property="og:updated_time" content="2019-04-27T09:01:05.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ViewDragHelper(拖拽)的用法">
-<meta name="twitter:description" content="ViewDragHelper是一个用来简化view拖拽操作的帮助类,解决了android中手势处理过于复杂的问题; 基本使用流程:​    a. 创建 ViewDragHelper mHelper = ViewDragHelper.create(this, 1.0f, new CallBack()); ​              参数1:上下文 ​              参数2:拖拽的灵敏度">
+<meta name="twitter:title" content="Android中WebView基本使用">
+<meta name="twitter:description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -158,51 +158,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ViewDragHelper-拖拽-的用法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android中WebView基本使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ViewDragHelper(拖拽)的用法
+      Android中WebView基本使用
     </h1>
   
 
         
-        <a href="/cjuzah3mr000ao0ug0uzuvlcj.html" class="archive-article-date">
-  	<time datetime="2016-08-27T03:56:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-27</time>
+        <a href="/cjuzahzqq0000gwug9xomovnd.html" class="archive-article-date">
+  	<time datetime="2016-09-06T05:59:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ViewDragHelper是一个用来简化view拖拽操作的帮助类,解决了android中手势处理过于复杂的问题;</p>
-<h4 id="基本使用流程"><a href="#基本使用流程" class="headerlink" title="基本使用流程:"></a>基本使用流程:</h4><p>​    a. 创建 ViewDragHelper mHelper = ViewDragHelper.create(this, 1.0f, new CallBack());</p>
-<p>​              参数1:上下文</p>
-<p>​              参数2:拖拽的灵敏度:float类型,1.0f为正常灵敏度</p>
-<p>​              参数3: 回调接口</p>
+        <p>对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">public void loadUrl(String url) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>下面就是介绍围绕webview进行的一系列的配置。</p>
+<p>首先如果你调用了下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">webView = (WebView) findViewById(R.id.webview);</div><div class="line">webView.loadUrl(&quot;http://www.baidu.com&quot;);</div></pre></td></tr></table></figure>
+<p>你会发现你的app会自动打开手机系统自带的默认浏览器，这时候我们需要加一行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webView.setWebViewClient(new WebViewClient()&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>​    b. 把事件的拦截和处理交给ViewDragHelper              </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//TouchEvent事件拦截,并交给mHelper来处理是否拦击TouchEvent事件public boolean onInterceptTouchEvent(MotionEvent ev) &#123;    //触摸事件的拦截交由mHelper处理    return mHelper.shouldInterceptTouchEvent(ev);&#125;</div><div class="line">//TouchEvent事件处理,并该事件交由mHelper来处理public boolean onTouchEvent(MotionEvent event) &#123;     //触摸事件交由mHelper处理     mHelper.processTouchEvent(event);     return true;&#125;</div></pre></td></tr></table></figure>
-<p>​    c. 在CallBack中接收处理结果<br>​        boolean tryCaptureView();返回值决定了child是否可以被拖拽。<br>​        clampViewPositionHorizontal(View child, int left, int dx);修正child水平方向的位置（此时View还没真正移动）。<br>​        clampViewPositionVertical(View child, int top, int dx);修正child垂直方向的位置（此时View还没真正移动）。       </p>
-<p>#### </p>
-<h4 id="ViewDragHelper内部几个回调方法"><a href="#ViewDragHelper内部几个回调方法" class="headerlink" title="ViewDragHelper内部几个回调方法"></a>ViewDragHelper内部几个回调方法</h4><p>​       boolean tryCaptureView(View child, int pointerId)；</p>
-<p>​            返回值决定了child是否可以被拖拽，只要手指拖拽ViewGroup中的child，都会走这个方法，返回true，表示这个child可以被拖拽，返回false表示这个child不可以被拖拽。我们可以在内部判断        当前用户正在尝试拖拽的控件是不是可以被拖拽。</p>
-<pre><code>int getViewHorizontalDragRange(View child)；
-</code></pre><p>​            确定了child被拖拽的范围，返回一个大于0的值，表示child可以被拖拽。（跟踪源码发现，super中返回值为0，checkTouchSlop()返回false，child不可以被拖拽，此时表明child并没有拦截到        拖拽事件，交由ViewGroup（我们的DragLayout）处理；所以这个方法并不会真正限制我们的拖拽范围（了解即可））。</p>
-<pre><code>int clampViewPositionHorizontal(View child, int left, int dx)；
-    在child移动之前修正child的位置，返回值决定了child将要移动到的位置；参数：
-    @param child 被拖拽的孩子
-    @param left 建议移动到的位置
-    @param dx left和旧的位置的偏移量
-    一般拖拽的逻辑会在此方法中处理，返回我们需要移动到的位置。
-</code></pre><p>​    void onViewPositionChanged(View changedView, int left, int top, int dx, int dy)；<br>​        child位置改变过程中持续调用此方法，可以在此方法中做伴随着拖拽一直持续的操作，如：伴随动画@param changedView 被拖拽的child<br>​        @param left 当前的left<br>​        @param top 当前的top<br>​        @param dx 相对于上一次的位置，x轴移动的偏移量<br>​        @param dy 相对于上一次的位置，y轴移动的偏移量</p>
-<p>​    void onViewReleased(View releasedChild, float xvel, float yvel)；<br>​        手指释放child后的操作。<br>​        @param releasedChild 被释放的child<br>​        @param xvel 松手时x方向的速度 向左为- 向右为+<br>​        @param yvel 松手时y方向的速度 向上为- 向下为+</p>
-<h4 id="ViewDragHelper实现平滑动画"><a href="#ViewDragHelper实现平滑动画" class="headerlink" title="ViewDragHelper实现平滑动画"></a>ViewDragHelper实现平滑动画</h4><p>​    ViewDragHelper内置了一个Scroller。实现平滑动画的步骤：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>) 触发动画 <span class="keyword">if</span>(helper.smoothSlideViewTo(mainContent, mRange, <span class="number">0</span>))&#123;<span class="comment">//开启平滑动画    ViewCompat.postInvalidateOnAnimation(this);//一定要传view所在的容器&#125;2) 维持动画public void computeScroll() &#123;    if(helper.continueSettling(true))&#123;        ViewCompat.postInvalidateOnAnimation(this);    &#125;&#125;</span></div></pre></td></tr></table></figure>
-
+<p>然后再运行发现就不调用默认浏览器了，下面为大家讲讲WebViewClient这个类：WebViewClient类中的几个方法在我们平时开发中大量的运用，首先是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public boolean shouldOverrideUrlLoading(WebView view, String url) &#123;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一般情况下我们不需要重写，这个函数有一个返回值，当为false时意思是我们不用管，当前的webview自已加载这个url，当返回为ture时，就让我们自己操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">public void onPageFinished(WebView view, String url) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当页面加载完成时调用，但需要注意的是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * When onPageFinished() is called, the</div><div class="line"> * rendering picture may not be updated yet. To get the notification for the</div><div class="line"> * new Picture, use &#123;@link WebView.PictureListener#onNewPicture&#125;.</div><div class="line"> */</div></pre></td></tr></table></figure>
+<p>也就是渲染图片有可能没有加载完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Notify the host application that the WebView will load the resource</div><div class="line"> * specified by the given url.</div><div class="line"> *</div><div class="line"> * @param view The WebView that is initiating the callback.</div><div class="line"> * @param url The url of the resource the WebView will load.</div><div class="line"> */</div><div class="line">public void onLoadResource(WebView view, String url) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个函数是这要加载资源就会被调用。然后说一下错误处理的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Report an error to the host application. These errors are unrecoverable</div><div class="line"> * (i.e. the main resource is unavailable). The errorCode parameter</div><div class="line"> * corresponds to one of the ERROR_* constants.</div><div class="line"> * @param view The WebView that is initiating the callback.</div><div class="line"> * @param errorCode The error code corresponding to an ERROR_* value.</div><div class="line"> * @param description A String describing the error.</div><div class="line"> * @param failingUrl The url that failed to load.</div><div class="line"> * @deprecated Use &#123;@link #onReceivedError(WebView, WebResourceRequest, WebResourceError)</div><div class="line"> *             onReceivedError(WebView, WebResourceRequest, WebResourceError)&#125; instead.</div><div class="line"> */</div><div class="line">@Deprecated</div><div class="line">public void onReceivedError(WebView view, int errorCode,</div><div class="line">        String description, String failingUrl) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>重写该函数让你的app更加人性化。</p>
+<p>那这里我们又有一个需求：我们要有一个进度条，那我们怎么知道时时的加载进度呢，就不是在WebViewClient类中了，而是在WebChromeClient中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Tell the host application the current progress of loading a page.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param newProgress Current page loading progress, represented by</div><div class="line"> *                    an integer between 0 and 100.</div><div class="line"> */</div><div class="line">public void onProgressChanged(WebView view, int newProgress) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>其中参数newProgress就是加载的时时进度。WebChromeClient中还用一些常用的函数，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Notify the host application of a change in the document title.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param title A String containing the new title of the document.</div><div class="line"> */</div><div class="line">public void onReceivedTitle(WebView view, String title) &#123;&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Notify the host application of a new favicon for the current page.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param icon A Bitmap containing the favicon for the current page.</div><div class="line"> */</div><div class="line">public void onReceivedIcon(WebView view, Bitmap icon) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>一个是可以获取网页的title，一个是可以title旁边的icon。</p>
+<p>然后说一下webview缓存问题:有时候我们有缓存的需求，就是在没有网络的情况下，以前可以打开的网页也可以通过缓存文件打开，主要代码为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);</div><div class="line">webSettings.setAppCacheEnabled(true);</div><div class="line">String path = Environment.getExternalStorageDirectory().getAbsolutePath() + &quot;/gefdemoweb&quot;;</div><div class="line">Log.e(null,path);</div><div class="line">webSettings.setAppCachePath(path);</div></pre></td></tr></table></figure>
+<p>第一行设置了缓存模式，第二行设置可以缓存，然后下面设置缓存路径，关于缓存模式有很多种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public static final int LOAD_DEFAULT = -1;//默认模式，当缓存资源是可用的不过期，就使用，否次网络加载</div><div class="line">public static final int LOAD_NORMAL = 0;//This value is obsolete,过时了，不用管</div><div class="line">public static final int LOAD_CACHE_ELSE_NETWORK = 1;//当缓存资源是可用的就使用,即使它是过期的，否次网络加载</div><div class="line">public static final int LOAD_NO_CACHE = 2;//不使用缓存</div><div class="line">public static final int LOAD_CACHE_ONLY = 3;//不使用网络</div></pre></td></tr></table></figure>
+<p>然后说一下按返回键的问题，如果你不做任何设置，按返回键肯定要跳到上一个activity，但是我们想让他返回到上一个加载的网页怎么办：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public boolean onKeyDown(int keyCode, KeyEvent event) &#123;</div><div class="line">    if (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; webView.canGoBack())&#123;</div><div class="line">        webView.goBack();</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return super.onKeyDown(keyCode, event);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>完美解决。</p>
+<p>最后看一下webSetting的其它常用设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">setJavaScriptEnabled(true);  //支持js</div><div class="line">setPluginsEnabled(true);  //支持插件 </div><div class="line">setUseWideViewPort(false);  //将图片调整到适合webview的大小 </div><div class="line">setSupportZoom(true);  //支持缩放 </div><div class="line">setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN); //支持内容重新布局  </div><div class="line">supportMultipleWindows();  //多窗口 </div><div class="line">setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);  //关闭webview中缓存 </div><div class="line">setAllowFileAccess(true);  //设置可以访问文件 </div><div class="line">setNeedInitialFocus(true); //当webview调用requestFocus时为webview设置节点</div><div class="line">webview webSettings.setBuiltInZoomControls(true); //设置支持缩放 </div><div class="line">setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口 </div><div class="line">setLoadWithOverviewMode(true); // 缩放至屏幕的大小</div><div class="line">setLoadsImagesAutomatically(true);  //支持自动加载图片</div></pre></td></tr></table></figure>
       
 
       
@@ -281,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzah3mr000ao0ug0uzuvlcj.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzahzqq0000gwug9xomovnd.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -295,18 +303,18 @@
   
 <nav id="article-nav">
   
-    <a href="/cjuzah3mt000bo0uggue9bj1y.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/cjuzahzrq0007gwugdvvu6g3x.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Widget的基本使用
+          Android开发之Path详解
         
       </div>
     </a>
   
   
-    <a href="/cjuzah3m20004o0ugng50fiok.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android中的Intent Filter匹配规则</div>
+    <a href="/cjuzahzs2000bgwugq4tbs6f6.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Widget的基本使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
