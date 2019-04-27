@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Android中WebView基本使用 | zehua的个人博客</title>
+  <title>Android中的Context详解 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
+  <meta name="description" content="​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android中WebView基本使用">
-<meta property="og:url" content="http://www.gzehua.cn/cjuzaf3vv00002sugl2uzzfu7.html">
+<meta property="og:title" content="Android中的Context详解">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzah3lp0000o0uggjtji5le.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
+<meta property="og:description" content="​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T09:01:05.353Z">
+<meta property="og:updated_time" content="2019-04-27T08:58:23.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android中WebView基本使用">
-<meta name="twitter:description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
+<meta name="twitter:title" content="Android中的Context详解">
+<meta name="twitter:description" content="​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -158,59 +158,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android中WebView基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android中的Context详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Android中WebView基本使用
+      Android中的Context详解
     </h1>
   
 
         
-        <a href="/cjuzaf3vv00002sugl2uzzfu7.html" class="archive-article-date">
-  	<time datetime="2016-09-06T05:59:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-06</time>
+        <a href="/cjuzah3lp0000o0uggjtji5le.html" class="archive-article-date">
+  	<time datetime="2016-03-16T04:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">public void loadUrl(String url) &#123;&#125;</div></pre></td></tr></table></figure>
-<p>下面就是介绍围绕webview进行的一系列的配置。</p>
-<p>首先如果你调用了下面代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">webView = (WebView) findViewById(R.id.webview);</div><div class="line">webView.loadUrl(&quot;http://www.baidu.com&quot;);</div></pre></td></tr></table></figure>
-<p>你会发现你的app会自动打开手机系统自带的默认浏览器，这时候我们需要加一行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webView.setWebViewClient(new WebViewClient()&#125;</div></pre></td></tr></table></figure>
+        <p>​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更有效的使用Context的技巧。</p>
+<p><strong>Context的类型</strong></p>
+<p>并不是所有的context实例都是等价的。根据Android应用的组件不同，你访问的context推向有些细微的差别。</p>
 <a id="more"></a>
-<p>然后再运行发现就不调用默认浏览器了，下面为大家讲讲WebViewClient这个类：WebViewClient类中的几个方法在我们平时开发中大量的运用，首先是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public boolean shouldOverrideUrlLoading(WebView view, String url) &#123;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>一般情况下我们不需要重写，这个函数有一个返回值，当为false时意思是我们不用管，当前的webview自已加载这个url，当返回为ture时，就让我们自己操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">public void onPageFinished(WebView view, String url) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当页面加载完成时调用，但需要注意的是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * When onPageFinished() is called, the</div><div class="line"> * rendering picture may not be updated yet. To get the notification for the</div><div class="line"> * new Picture, use &#123;@link WebView.PictureListener#onNewPicture&#125;.</div><div class="line"> */</div></pre></td></tr></table></figure>
-<p>也就是渲染图片有可能没有加载完成。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Notify the host application that the WebView will load the resource</div><div class="line"> * specified by the given url.</div><div class="line"> *</div><div class="line"> * @param view The WebView that is initiating the callback.</div><div class="line"> * @param url The url of the resource the WebView will load.</div><div class="line"> */</div><div class="line">public void onLoadResource(WebView view, String url) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这个函数是这要加载资源就会被调用。然后说一下错误处理的函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Report an error to the host application. These errors are unrecoverable</div><div class="line"> * (i.e. the main resource is unavailable). The errorCode parameter</div><div class="line"> * corresponds to one of the ERROR_* constants.</div><div class="line"> * @param view The WebView that is initiating the callback.</div><div class="line"> * @param errorCode The error code corresponding to an ERROR_* value.</div><div class="line"> * @param description A String describing the error.</div><div class="line"> * @param failingUrl The url that failed to load.</div><div class="line"> * @deprecated Use &#123;@link #onReceivedError(WebView, WebResourceRequest, WebResourceError)</div><div class="line"> *             onReceivedError(WebView, WebResourceRequest, WebResourceError)&#125; instead.</div><div class="line"> */</div><div class="line">@Deprecated</div><div class="line">public void onReceivedError(WebView view, int errorCode,</div><div class="line">        String description, String failingUrl) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>重写该函数让你的app更加人性化。</p>
-<p>那这里我们又有一个需求：我们要有一个进度条，那我们怎么知道时时的加载进度呢，就不是在WebViewClient类中了，而是在WebChromeClient中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Tell the host application the current progress of loading a page.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param newProgress Current page loading progress, represented by</div><div class="line"> *                    an integer between 0 and 100.</div><div class="line"> */</div><div class="line">public void onProgressChanged(WebView view, int newProgress) &#123;&#125;</div></pre></td></tr></table></figure>
-<p>其中参数newProgress就是加载的时时进度。WebChromeClient中还用一些常用的函数，比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Notify the host application of a change in the document title.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param title A String containing the new title of the document.</div><div class="line"> */</div><div class="line">public void onReceivedTitle(WebView view, String title) &#123;&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Notify the host application of a new favicon for the current page.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param icon A Bitmap containing the favicon for the current page.</div><div class="line"> */</div><div class="line">public void onReceivedIcon(WebView view, Bitmap icon) &#123;&#125;</div></pre></td></tr></table></figure>
-<p>一个是可以获取网页的title，一个是可以title旁边的icon。</p>
-<p>然后说一下webview缓存问题:有时候我们有缓存的需求，就是在没有网络的情况下，以前可以打开的网页也可以通过缓存文件打开，主要代码为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);</div><div class="line">webSettings.setAppCacheEnabled(true);</div><div class="line">String path = Environment.getExternalStorageDirectory().getAbsolutePath() + &quot;/gefdemoweb&quot;;</div><div class="line">Log.e(null,path);</div><div class="line">webSettings.setAppCachePath(path);</div></pre></td></tr></table></figure>
-<p>第一行设置了缓存模式，第二行设置可以缓存，然后下面设置缓存路径，关于缓存模式有很多种：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public static final int LOAD_DEFAULT = -1;//默认模式，当缓存资源是可用的不过期，就使用，否次网络加载</div><div class="line">public static final int LOAD_NORMAL = 0;//This value is obsolete,过时了，不用管</div><div class="line">public static final int LOAD_CACHE_ELSE_NETWORK = 1;//当缓存资源是可用的就使用,即使它是过期的，否次网络加载</div><div class="line">public static final int LOAD_NO_CACHE = 2;//不使用缓存</div><div class="line">public static final int LOAD_CACHE_ONLY = 3;//不使用网络</div></pre></td></tr></table></figure>
-<p>然后说一下按返回键的问题，如果你不做任何设置，按返回键肯定要跳到上一个activity，但是我们想让他返回到上一个加载的网页怎么办：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public boolean onKeyDown(int keyCode, KeyEvent event) &#123;</div><div class="line">    if (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; webView.canGoBack())&#123;</div><div class="line">        webView.goBack();</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return super.onKeyDown(keyCode, event);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>完美解决。</p>
-<p>最后看一下webSetting的其它常用设置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">setJavaScriptEnabled(true);  //支持js</div><div class="line">setPluginsEnabled(true);  //支持插件 </div><div class="line">setUseWideViewPort(false);  //将图片调整到适合webview的大小 </div><div class="line">setSupportZoom(true);  //支持缩放 </div><div class="line">setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN); //支持内容重新布局  </div><div class="line">supportMultipleWindows();  //多窗口 </div><div class="line">setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);  //关闭webview中缓存 </div><div class="line">setAllowFileAccess(true);  //设置可以访问文件 </div><div class="line">setNeedInitialFocus(true); //当webview调用requestFocus时为webview设置节点</div><div class="line">webview webSettings.setBuiltInZoomControls(true); //设置支持缩放 </div><div class="line">setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口 </div><div class="line">setLoadWithOverviewMode(true); // 缩放至屏幕的大小</div><div class="line">setLoadsImagesAutomatically(true);  //支持自动加载图片</div></pre></td></tr></table></figure>
+<ul>
+<li>Application － 是一个运行在你的应用进程中的单例。在Activity或者Service中，它可以通过getApplication()函数获得，或者人和继承于context的对象中，通过getApplicationContext()方法获得。不管你是通过何种方法在哪里获得的，在一个进程内，你总是获得到同一个实例。</li>
+<li>Activity/Service － 继承于ContextWrapper，它实现了与context同样API，但是代理这些方法调用到内部隐藏的Context实例，即我们所知道的基础context。任何时候当系统创建一个新的Activity或者Service实例的时候，它也创建一个新的ContextImpl实例来做所有的繁重的工作。每一个Activity和Service以及其对应的基础context，对每个实例来说都是唯一的。</li>
+<li>BroadcastReciver － 它本身不是context，也没有context在它里面，但是每当一个新的广播到达的时候，框架都传递一个context对象到onReceive()。这个context是一个ReceiverRestrictedContext实例，它有两个主要函数被禁掉：registerReceiver()和bindService()。这两个函数在BroadcastReceiver.onReceive()不允许调用。每次Receiver处理一个广播，传递进来的context都是一个新的实例。</li>
+<li>ContentProvider － 它本身也不是一个Context，但是它可以通过getContext()函数给你一个Context对象。如果ContentProvider是在调用者的的本地（例如，在同一个应用进程），getContext()将返回的是Application单例。然而，如果调用这和ContentProvider在不同的进程的时候，它将返回一个新创建的实例代表这个Provider所运行的包。</li>
+</ul>
+<p><strong>保存引用</strong></p>
+<p>第一个我们需要解决问题是，在一个对象或者类内部保存一个context引用，而它生命周期却超过其保存引用的对象的生命周期。例如，创建一个自定义的单例，它需要一个context来加载资源或者获取ContentProvider，从而保存一个指向当前Activiy或者Service的引用在单例中。</p>
+<p><strong>糟糕的单例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class CustomManager &#123;  </div><div class="line">    private static CustomManager sInstance;  </div><div class="line"></div><div class="line">    public static CustomManager getInstance(Context context) &#123;  </div><div class="line">        if (sInstance == null) &#123;  </div><div class="line">            sInstance = new CustomManager(context);  </div><div class="line">        &#125;  </div><div class="line"></div><div class="line">        return sInstance;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    private Context mContext;  </div><div class="line"></div><div class="line">    private CustomManager(Context context) &#123;  </div><div class="line">        mContext = context;  </div><div class="line">    &#125;     </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里的问题在于，我们不知道这个context是从哪里来的，并且如果保存一个最终指向的是Activity或者Servece的引用是并不安全的。这是一个问题，是因为一个单例在类的内部维持一个唯一的静态引用，这意味着我们的对象，以及所有其他它所引用的对象，将永远不能被垃圾回收。假如这个Context是一个Activity，我们将保存与这个Activity相关的所有的view以及其他大的对象，从而造成内存泄漏。</p>
+<p>为了解决这个问题，我们修改单例永远只是保存Application context：</p>
+<p><strong>改善的单例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public class CustomManager &#123;  </div><div class="line">    private static CustomManager sInstance;  </div><div class="line"></div><div class="line">    public static CustomManager getInstance(Context context) &#123;  </div><div class="line">      if (sInstance == null) &#123;  </div><div class="line">          //Always pass in the Application Context  </div><div class="line">          sInstance = new CustomManager(context.getApplicationContext());  </div><div class="line">      &#125;  </div><div class="line"></div><div class="line">      return sInstance;  </div><div class="line">  &#125;  </div><div class="line"></div><div class="line">  private Context mContext;  </div><div class="line"></div><div class="line">  private CustomManager(Context context) &#123;  </div><div class="line">      mContext = context;  </div><div class="line">  &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在这个例子中，我们的Context来自哪里都没有关系，因为我们这里保存引用是安全的。Application Context 本身就是一个单例，所以我们再创建另外一个static引用，不会造成任何内存泄漏。另外一个很好的例子是，在后台线程或者一个等待的Handler中保存Context的引用，也可以使用这样的方法。</p>
+<p>为什么我们不能总是引用Application context呢？正如前面说的，引用Application context永远不用担心内存泄漏的问题。问题的答案，就像我在开始的介绍中说的，是因为不同context并不是等价的。</p>
+<p><strong>Context的能力</strong></p>
+<p>Conext能做的通用操作决定于这个context最初来源于哪里。下表所列的是，在应用中常见的会收到context对象的，以及对应的每种情况，它可以用于哪些地方：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Application</th>
+<th style="text-align:center">Activity</th>
+<th style="text-align:center">Service</th>
+<th style="text-align:center">ContentProvider</th>
+<th style="text-align:center">BroadcastReceiver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">显示Dialog</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">NO</td>
+</tr>
+<tr>
+<td style="text-align:center">启动Activity</td>
+<td style="text-align:center">NO1</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO1</td>
+<td style="text-align:center">NO1</td>
+<td style="text-align:center">NO1</td>
+</tr>
+<tr>
+<td style="text-align:center">Layout Inflation</td>
+<td style="text-align:center">NO2</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO2</td>
+<td style="text-align:center">NO2</td>
+<td style="text-align:center">NO2</td>
+</tr>
+<tr>
+<td style="text-align:center">启动Service</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">绑定到Service</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO</td>
+</tr>
+<tr>
+<td style="text-align:center">发送Broadcast</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">注册BroadcastReceiver</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO3</td>
+</tr>
+<tr>
+<td style="text-align:center">加载Resource</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ol>
+<li>NO1 表示Application context的确可以开始一个Activity，但是它需要创建一个新的task。这可能会满足一些特定的需求，但是在你的应用中会创建一个不标准的回退栈（back stack），这通常是不推荐的或者不是是好的实践。</li>
+<li>NO2 表示这是非法的，但是这个填充（inflation）的确可以完成，但是是使用所运行的系统默认的主题（theme），而不是你app定义的主题。</li>
+<li>NO3 在Android4.2以上，如果Receiver是null的话（这是用来获取一个sticky broadcast的当前 值的），这是允许的。</li>
+</ol>
+<p><strong>用户界面UI</strong></p>
+<p>从前面的表格中可以看到，application context有很多功能并不是合适去做，而这些功能都与UI相关。实际上，只有Activity能够处理所有与UI相关的任务。其他类别的context实例功能都差不多。</p>
+<p>幸运的是，在应用中这三种操作基本上都不需要在Activity范围之外进行，这很可能是android框架故意这么设计的。尝试显示一个使用Aplication context创建的Dialog，或者使用Application context开始一个Activity，系统会抛出一个异常，让你的application崩溃，非常强的告诉你某些地方出了问题。</p>
+<p>一个并不明显的问题是填充布局（inflating layout）。如果你已经读过了我（原文作者）的上一篇文章Layout inflation，你就已经知道它可能是一个非常神秘过程，伴随一些隐藏的行为。使用正确的context关系到其中的一个行为。当你使用Application context来inflate一个布局的时候，框架并不会报错，并返回一个使用系统默认的主题创建一个完美的view给你，而没有考虑你的applicaiton自定义的theme和style。这是因为Acitivity是唯一的绑定了在manifast文件种定义主题的Context。其他的Context实例将会使用系统默认的主题来inflater你的view。导致显示的结果并不是你所希望的。</p>
+<p><strong>规则的路口</strong></p>
+<p>可能有些读者已经得出两个规则互相矛盾的结论。可能有些情况下，在某些Application的设计中，我们可能既必须长期保存一个的引用，并且为了完成与UI相关的工作又必须保存一个Activity。如果出现这种情况，我将会强烈建议你重新考虑你的设计，它将是一个很好的“反框架”教材。</p>
+<p><strong>经验法则</strong></p>
+<p>绝大多数情况下，使用在你的所工作的组建内部能够直接获取的Context。只要这个引用没有超过这个组建的生命周期，你可以安全的保存这个引用。一旦你要保存一个context的引用，它超过了你的Activity或者Service的生命周期范围，甚至是暂时的，你就需要转换你的引用为Application context。</p>
+
       
 
       
@@ -289,7 +371,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzaf3vv00002sugl2uzzfu7.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzah3lp0000o0uggjtji5le.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,20 +385,15 @@
   
 <nav id="article-nav">
   
-    <a href="/cjuzaf3wh00062sugcdcpdhyl.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/cjuzah3m10003o0ugxhjd7qkj.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Android开发之Path详解
+          Android内存泄漏的8种可能
         
       </div>
     </a>
   
-  
-    <a href="/cjuzaf3x6000a2sugrbaujisv.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ViewDragHelper(拖拽)的用法</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 

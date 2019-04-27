@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>ViewDragHelper(拖拽)的用法 | zehua的个人博客</title>
+  <title>Android内存泄漏的8种可能 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ViewDragHelper是一个用来简化view拖拽操作的帮助类,解决了android中手势处理过于复杂的问题; 基本使用流程:​    a. 创建 ViewDragHelper mHelper = ViewDragHelper.create(this, 1.0f, new CallBack()); ​              参数1:上下文 ​              参数2:拖拽的灵敏度">
+  <meta name="description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ViewDragHelper(拖拽)的用法">
-<meta property="og:url" content="http://www.gzehua.cn/cjuzaf3x6000a2sugrbaujisv.html">
+<meta property="og:title" content="Android内存泄漏的8种可能">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzah3m10003o0ugxhjd7qkj.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="ViewDragHelper是一个用来简化view拖拽操作的帮助类,解决了android中手势处理过于复杂的问题; 基本使用流程:​    a. 创建 ViewDragHelper mHelper = ViewDragHelper.create(this, 1.0f, new CallBack()); ​              参数1:上下文 ​              参数2:拖拽的灵敏度">
+<meta property="og:description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T08:58:08.525Z">
+<meta property="og:updated_time" content="2019-04-27T07:42:01.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ViewDragHelper(拖拽)的用法">
-<meta name="twitter:description" content="ViewDragHelper是一个用来简化view拖拽操作的帮助类,解决了android中手势处理过于复杂的问题; 基本使用流程:​    a. 创建 ViewDragHelper mHelper = ViewDragHelper.create(this, 1.0f, new CallBack()); ​              参数1:上下文 ​              参数2:拖拽的灵敏度">
+<meta name="twitter:title" content="Android内存泄漏的8种可能">
+<meta name="twitter:description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -158,50 +158,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ViewDragHelper-拖拽-的用法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android内存泄漏的8种可能" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ViewDragHelper(拖拽)的用法
+      Android内存泄漏的8种可能
     </h1>
   
 
         
-        <a href="/cjuzaf3x6000a2sugrbaujisv.html" class="archive-article-date">
-  	<time datetime="2016-08-27T03:56:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-27</time>
+        <a href="/cjuzah3m10003o0ugxhjd7qkj.html" class="archive-article-date">
+  	<time datetime="2016-05-15T03:32:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ViewDragHelper是一个用来简化view拖拽操作的帮助类,解决了android中手势处理过于复杂的问题;</p>
-<h4 id="基本使用流程"><a href="#基本使用流程" class="headerlink" title="基本使用流程:"></a>基本使用流程:</h4><p>​    a. 创建 ViewDragHelper mHelper = ViewDragHelper.create(this, 1.0f, new CallBack());</p>
-<p>​              参数1:上下文</p>
-<p>​              参数2:拖拽的灵敏度:float类型,1.0f为正常灵敏度</p>
-<p>​              参数3: 回调接口</p>
+        <p>​    Java是垃圾回收语言的一种，其优点是开发者无需特意<strong>管理内存分配</strong>，降低了应用由于<strong>局部故障(segmentation fault)</strong>导致崩溃，同时防止未释放的内存把<strong>堆栈(heap)</strong>挤爆的可能，所以写出来的代码更为安全。</p>
+<p>不幸的是，在Java中仍存在很多容易导致内存泄漏的<strong>逻辑可能</strong>(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出(out-of-memory，OOM)。</p>
 <a id="more"></a>
-<p>​    b. 把事件的拦截和处理交给ViewDragHelper              </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//TouchEvent事件拦截,并交给mHelper来处理是否拦击TouchEvent事件public boolean onInterceptTouchEvent(MotionEvent ev) &#123;    //触摸事件的拦截交由mHelper处理    return mHelper.shouldInterceptTouchEvent(ev);&#125;</div><div class="line">//TouchEvent事件处理,并该事件交由mHelper来处理public boolean onTouchEvent(MotionEvent event) &#123;     //触摸事件交由mHelper处理     mHelper.processTouchEvent(event);     return true;&#125;</div></pre></td></tr></table></figure>
-<p>​    c. 在CallBack中接收处理结果<br>​        boolean tryCaptureView();返回值决定了child是否可以被拖拽。<br>​        clampViewPositionHorizontal(View child, int left, int dx);修正child水平方向的位置（此时View还没真正移动）。<br>​        clampViewPositionVertical(View child, int top, int dx);修正child垂直方向的位置（此时View还没真正移动）。       </p>
-<p>#### </p>
-<h4 id="ViewDragHelper内部几个回调方法"><a href="#ViewDragHelper内部几个回调方法" class="headerlink" title="ViewDragHelper内部几个回调方法"></a>ViewDragHelper内部几个回调方法</h4><p>​       boolean tryCaptureView(View child, int pointerId)；</p>
-<p>​            返回值决定了child是否可以被拖拽，只要手指拖拽ViewGroup中的child，都会走这个方法，返回true，表示这个child可以被拖拽，返回false表示这个child不可以被拖拽。我们可以在内部判断        当前用户正在尝试拖拽的控件是不是可以被拖拽。</p>
-<pre><code>int getViewHorizontalDragRange(View child)；
-</code></pre><p>​            确定了child被拖拽的范围，返回一个大于0的值，表示child可以被拖拽。（跟踪源码发现，super中返回值为0，checkTouchSlop()返回false，child不可以被拖拽，此时表明child并没有拦截到        拖拽事件，交由ViewGroup（我们的DragLayout）处理；所以这个方法并不会真正限制我们的拖拽范围（了解即可））。</p>
-<pre><code>int clampViewPositionHorizontal(View child, int left, int dx)；
-    在child移动之前修正child的位置，返回值决定了child将要移动到的位置；参数：
-    @param child 被拖拽的孩子
-    @param left 建议移动到的位置
-    @param dx left和旧的位置的偏移量
-    一般拖拽的逻辑会在此方法中处理，返回我们需要移动到的位置。
-</code></pre><p>​    void onViewPositionChanged(View changedView, int left, int top, int dx, int dy)；<br>​        child位置改变过程中持续调用此方法，可以在此方法中做伴随着拖拽一直持续的操作，如：伴随动画@param changedView 被拖拽的child<br>​        @param left 当前的left<br>​        @param top 当前的top<br>​        @param dx 相对于上一次的位置，x轴移动的偏移量<br>​        @param dy 相对于上一次的位置，y轴移动的偏移量</p>
-<p>​    void onViewReleased(View releasedChild, float xvel, float yvel)；<br>​        手指释放child后的操作。<br>​        @param releasedChild 被释放的child<br>​        @param xvel 松手时x方向的速度 向左为- 向右为+<br>​        @param yvel 松手时y方向的速度 向上为- 向下为+</p>
-<h4 id="ViewDragHelper实现平滑动画"><a href="#ViewDragHelper实现平滑动画" class="headerlink" title="ViewDragHelper实现平滑动画"></a>ViewDragHelper实现平滑动画</h4><p>​    ViewDragHelper内置了一个Scroller。实现平滑动画的步骤：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>) 触发动画 <span class="keyword">if</span>(helper.smoothSlideViewTo(mainContent, mRange, <span class="number">0</span>))&#123;<span class="comment">//开启平滑动画    ViewCompat.postInvalidateOnAnimation(this);//一定要传view所在的容器&#125;2) 维持动画public void computeScroll() &#123;    if(helper.continueSettling(true))&#123;        ViewCompat.postInvalidateOnAnimation(this);    &#125;&#125;</span></div></pre></td></tr></table></figure>
+<p>一般内存泄漏(traditional memory leak)的原因是：当该对象的所有引用都已经释放了，对象仍未被释放。（译者注：<code>Cursor</code>忘记关闭等）<br>逻辑内存泄漏(logical memory leak)的原因是：当应用不再需要这个对象，当仍未释放该对象的所有引用。</p>
+<p><strong>如果持有对象的强引用，垃圾回收器是无法在内存中回收这个对象。</strong></p>
+<p>在Android开发中，最容易引发的内存泄漏问题的是Context。比如Activity的<code>Context</code>，就包含大量的内存引用，例如<code>View Hierarchies</code>和其他资源。一旦泄漏了<code>Context</code>，也意味泄漏它指向的所有对象。Android机器内存有限，太多的内存泄漏容易导致OOM。</p>
+<p>检测逻辑内存泄漏需要主观判断，特别是对象的生命周期并不清晰。幸运的是，<code>Activity</code>有着明确的生命周期，很容易发现泄漏的原因。Activity.onDestroy()被视为<code>Activity</code>生命的结束，程序上来看，它应该被销毁了，或者Android系统需要回收这些内存（译者注：当内存不够时，Android会回收看不见的<code>Activity</code>）。<br>如果这个方法执行完，在堆栈中仍存在持有该Activity的强引用，垃圾回收器就无法把它标记成已回收的内存，而我们本来目的就是要回收它！<br>结果就是<code>Activity</code>存活在它的生命周期之外。</p>
+<p><code>Activity</code>是重量级对象，应该让Android系统来处理它。然而，逻辑内存泄漏总是在不经意间发生。（译者注：曾经试过一个Activity导致20M内存泄漏）。在Android中，导致潜在内存泄漏的陷阱不外乎两种：</p>
+<ul>
+<li>全局进程(process-global)的static变量。这个无视应用的状态，持有<code>Activity</code>的强引用的怪物。</li>
+<li>活在<code>Activity</code>生命周期之外的线程。没有清空对<code>Activity</code>的强引用。</li>
+</ul>
+<p>检查一下你有没有遇到下列的情况。</p>
+<h2 id="Static-Activities"><a href="#Static-Activities" class="headerlink" title="Static Activities"></a>Static Activities</h2><p>在类中定义了静态<code>Activity</code>变量，把当前运行的<code>Activity</code>实例赋值于这个静态变量。<br>如果这个静态变量在<code>Activity</code>生命周期结束后没有清空，就导致内存泄漏。因为static变量是贯穿这个应用的生命周期的，所以被泄漏的<code>Activity</code>就会一直存在于应用的进程中，不会被垃圾回收器回收。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> static Activity activity;</div><div class="line"></div><div class="line">void setStaticActivity() &#123;</div><div class="line">  activity = this;</div><div class="line">&#125;</div><div class="line"></div><div class="line">View saButton = findViewById(R.id.sa_button);</div><div class="line">saButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">  @Override public void onClick(View v) &#123;</div><div class="line">    setStaticActivity();</div><div class="line">    nextActivity();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="Static-Views"><a href="#Static-Views" class="headerlink" title="Static Views"></a>Static Views</h2><p>类似的情况会发生在单例模式中，如果<code>Activity</code>经常被用到，那么在内存中保存一个实例是很实用的。正如之前所述，强制延长<code>Activity</code>的生命周期是相当危险而且不必要的，无论如何都不能这样做。</p>
+<p>特殊情况：如果一个View初始化耗费大量资源，而且在一个<code>Activity</code>生命周期内保持不变，那可以把它变成static，加载到视图树上(View Hierachy)，像这样，当<code>Activity</code>被销毁时，应当释放资源。（译者注：示例代码中并没有释放内存，把这个static view置null即可，但是还是不建议用这个static view的方法）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">static view;</div><div class="line"></div><div class="line">void setStaticView() &#123;</div><div class="line">  view = findViewById(R.id.sv_button);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View svButton = findViewById(R.id.sv_button);</div><div class="line">svButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">  @Override public void onClick(View v) &#123;</div><div class="line">    setStaticView();</div><div class="line">    nextActivity();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="Inner-Classes"><a href="#Inner-Classes" class="headerlink" title="Inner Classes"></a>Inner Classes</h2><p>继续，假设<code>Activity</code>中有个内部类，这样做可以提高可读性和封装性。将如我们创建一个内部类，而且持有一个静态变量的引用，恭喜，内存泄漏就离你不远了（译者注：销毁的时候置空，嗯）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">   private static Object inner;</div><div class="line"></div><div class="line">   void createInnerClass() &#123;</div><div class="line">    class InnerClass &#123;</div><div class="line">    &#125;</div><div class="line">    inner = new InnerClass();</div><div class="line">&#125;</div><div class="line"></div><div class="line">View icButton = findViewById(R.id.ic_button);</div><div class="line">icButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override public void onClick(View v) &#123;</div><div class="line">        createInnerClass();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>内部类的优势之一就是可以访问外部类，不幸的是，导致内存泄漏的原因，就是内部类持有外部类实例的强引用。</p>
+<h2 id="Anonymous-Classes"><a href="#Anonymous-Classes" class="headerlink" title="Anonymous Classes"></a>Anonymous Classes</h2><p>相似地，匿名类也维护了外部类的引用。所以内存泄漏很容易发生，当你在<code>Activity</code>中定义了匿名的<code>AsyncTsk</code><br>。当异步任务在后台执行耗时任务期间，<code>Activity</code>不幸被销毁了（译者注：用户退出，系统回收），这个被<code>AsyncTask</code>持有的<code>Activity</code>实例就不会被垃圾回收器回收，直到异步任务结束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">void startAsyncTask() &#123;</div><div class="line">    new AsyncTask&lt;Void, Void, Void&gt;() &#123;</div><div class="line">        @Override protected Void doInBackground(Void... params) &#123;</div><div class="line">            while(true);</div><div class="line">        &#125;</div><div class="line">    &#125;.execute();</div><div class="line">&#125;</div><div class="line"></div><div class="line">super.onCreate(savedInstanceState);</div><div class="line">setContentView(R.layout.activity_main);</div><div class="line">View aicButton = findViewById(R.id.at_button);</div><div class="line">aicButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override public void onClick(View v) &#123;</div><div class="line">        startAsyncTask();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h2><p>同样道理，定义匿名的<code>Runnable</code>，用匿名类<code>Handler</code>执行。<code>Runnable</code>内部类会持有外部类的隐式引用，被传递到<code>Handler</code>的消息队列<code>MessageQueue</code>中，在<code>Message</code>消息没有被处理之前，<code>Activity</code>实例不会被销毁了，于是导致内存泄漏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">void createHandler() &#123;</div><div class="line">    new Handler() &#123;</div><div class="line">        @Override public void handleMessage(Message message) &#123;</div><div class="line">            super.handleMessage(message);</div><div class="line">        &#125;</div><div class="line">    &#125;.postDelayed(new Runnable() &#123;</div><div class="line">        @Override public void run() &#123;</div><div class="line">            while(true);</div><div class="line">        &#125;</div><div class="line">    &#125;, Long.MAX_VALUE &gt;&gt; 1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View hButton = findViewById(R.id.h_button);</div><div class="line">hButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override public void onClick(View v) &#123;</div><div class="line">        createHandler();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h2><p>我们再次通过Thread和TimerTask来展现内存泄漏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">void spawnThread() &#123;</div><div class="line">    new Thread() &#123;</div><div class="line">        @Override public void run() &#123;</div><div class="line">            while(true);</div><div class="line">        &#125;</div><div class="line">    &#125;.start();</div><div class="line">&#125;</div><div class="line"></div><div class="line">View tButton = findViewById(R.id.t_button);</div><div class="line">tButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">  @Override public void onClick(View v) &#123;</div><div class="line">      spawnThread();</div><div class="line">      nextActivity();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="TimerTask"><a href="#TimerTask" class="headerlink" title="TimerTask"></a>TimerTask</h2><p>只要是匿名类的实例，不管是不是在工作线程，都会持有<code>Activity</code>的引用，导致内存泄漏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">void scheduleTimer() &#123;</div><div class="line">    new Timer().schedule(new TimerTask() &#123;</div><div class="line">        @Override</div><div class="line">        public void run() &#123;</div><div class="line">            while(true);</div><div class="line">        &#125;</div><div class="line">    &#125;, Long.MAX_VALUE &gt;&gt; 1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View ttButton = findViewById(R.id.tt_button);</div><div class="line">ttButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">    @Override public void onClick(View v) &#123;</div><div class="line">        scheduleTimer();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="Sensor-Manager"><a href="#Sensor-Manager" class="headerlink" title="Sensor Manager"></a>Sensor Manager</h2><p>最后，通过Context.getSystemService(int name)可以获取系统服务。这些服务工作在各自的进程中，帮助应用处理后台任务，处理硬件交互。如果需要使用这些服务，可以注册监听器，这会导致服务持有了<code>Context</code>的引用，如果在<code>Activity</code>销毁的时候没有注销这些监听器，会导致内存泄漏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public void registerListener() &#123;</div><div class="line">        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);</div><div class="line">        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ALL);</div><div class="line">        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_FASTEST);</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> View smButton = findViewById(R.id.sm_button);</div><div class="line"> smButton.setOnClickListener(new View.OnClickListener() &#123;</div><div class="line">     @Override public void onClick(View v) &#123;</div><div class="line">         registerListener();</div><div class="line">         nextActivity();</div><div class="line">     &#125;</div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
+<p>Memory Leak 8 – Sensor Manager</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>看过那么多会导致内存泄漏的例子，容易导致吃光手机的内存使垃圾回收处理更为频发，甚至最坏的情况会导致OOM。垃圾回收的操作是很昂贵的开销，会导致肉眼可见的卡顿。所以，实例化的时候注意持有的引用链，并经常进行内存泄漏检查。</p>
 
       
 
@@ -281,7 +290,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzaf3x6000a2sugrbaujisv.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzah3m10003o0ugxhjd7qkj.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -295,18 +304,18 @@
   
 <nav id="article-nav">
   
-    <a href="/cjuzaf3vv00002sugl2uzzfu7.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/cjuzah3lv0001o0ugc5rzt8sc.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Android中WebView基本使用
+          Android中图片的三层缓存
         
       </div>
     </a>
   
   
-    <a href="/cjuzaf3wb00042sugcloak8am.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android中的Intent Filter匹配规则</div>
+    <a href="/cjuzah3lp0000o0uggjtji5le.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android中的Context详解</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Android系统常用权限大全 | zehua的个人博客</title>
+  <title>Android中的Intent Filter匹配规则 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="访问网络android.permission.INTERNET，访问网络连接，可能产生GPRS流量android.permission.CHANGE_WIFI_STATE  Wifi 改变状态android.permission.ACCESS_WIFI_STATE WiFi 状态android.permission.ACCESS_NETWORK_STATE 网络状态">
+  <meta name="description" content="1.Intent简介 Intent用于在一个组件（Component，如Activity、Service、Broadcast Receiver）中打开另一个组件。 Intent可分为隐式（implicitly）和显式（explicitly）两种：  Explicitly Intent：在知道要打开哪个具体的Component时使用，通过指定调用者和被调用者即可打开目标Component； Impl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android系统常用权限大全">
-<meta property="og:url" content="http://www.gzehua.cn/cjuzaf3wk00072sugjxh21xj2.html">
+<meta property="og:title" content="Android中的Intent Filter匹配规则">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzah3m20004o0ugng50fiok.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="访问网络android.permission.INTERNET，访问网络连接，可能产生GPRS流量android.permission.CHANGE_WIFI_STATE  Wifi 改变状态android.permission.ACCESS_WIFI_STATE WiFi 状态android.permission.ACCESS_NETWORK_STATE 网络状态">
+<meta property="og:description" content="1.Intent简介 Intent用于在一个组件（Component，如Activity、Service、Broadcast Receiver）中打开另一个组件。 Intent可分为隐式（implicitly）和显式（explicitly）两种：  Explicitly Intent：在知道要打开哪个具体的Component时使用，通过指定调用者和被调用者即可打开目标Component； Impl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T07:41:34.367Z">
+<meta property="og:updated_time" content="2019-04-27T08:58:48.258Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android系统常用权限大全">
-<meta name="twitter:description" content="访问网络android.permission.INTERNET，访问网络连接，可能产生GPRS流量android.permission.CHANGE_WIFI_STATE  Wifi 改变状态android.permission.ACCESS_WIFI_STATE WiFi 状态android.permission.ACCESS_NETWORK_STATE 网络状态">
+<meta name="twitter:title" content="Android中的Intent Filter匹配规则">
+<meta name="twitter:description" content="1.Intent简介 Intent用于在一个组件（Component，如Activity、Service、Broadcast Receiver）中打开另一个组件。 Intent可分为隐式（implicitly）和显式（explicitly）两种：  Explicitly Intent：在知道要打开哪个具体的Component时使用，通过指定调用者和被调用者即可打开目标Component； Impl">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -158,151 +158,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android系统常用权限大全" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android中的Intent-Filter匹配规则" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Android系统常用权限大全
+      Android中的Intent Filter匹配规则
     </h1>
   
 
         
-        <a href="/cjuzaf3wk00072sugjxh21xj2.html" class="archive-article-date">
-  	<time datetime="2016-06-18T12:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
+        <a href="/cjuzah3m20004o0ugng50fiok.html" class="archive-article-date">
+  	<time datetime="2016-08-25T08:48:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>访问网络</strong><br>android.permission.INTERNET，访问网络连接，可能产生GPRS流量<br>android.permission.CHANGE_WIFI_STATE  Wifi 改变状态<br>android.permission.ACCESS_WIFI_STATE WiFi 状态<br>android.permission.ACCESS_NETWORK_STATE 网络状态</p>
+        <p><strong>1.Intent简介</strong></p>
+<p>Intent用于在一个组件（Component，如Activity、Service、Broadcast Receiver）中打开另一个组件。</p>
+<p>Intent可分为隐式（implicitly）和显式（explicitly）两种：</p>
+<ul>
+<li>Explicitly Intent：在知道要打开哪个具体的Component时使用，通过指定调用者和被调用者即可打开目标Component；</li>
+<li>Implicitly Intent：在不确切的知道要打开哪个Component的情况下，通过指出action、data、category，系统会寻找到匹配的Component。</li>
+</ul>
 <a id="more"></a>
-<p><strong>录制视频</strong><br>android.permission.CAMERA<br>android.permission.RECORD_AUDIO<br>android.permission.WRITE_EXTERNAL_STORAGE</p>
-<p><strong>底层访问权限</strong><br>android.permission.CWJ_GROUP，允许CWJ账户组访问底层信息</p>
-<p><strong>手机优化大师扩展权限</strong><br>android.permission.CELL_PHONE_MASTER_EX，手机优化大师扩展权限</p>
-<p><strong>控制定位更新</strong><br>android.permission.CONTROL_LOCATION_UPDATES，允许获得移动网络定位信息改变</p>
-<p><strong>删除缓存文件</strong><br>android.permission.DELETE_CACHE_FILES，允许应用删除缓存文件</p>
-<p><strong>删除应用</strong><br>android.permission.DELETE_PACKAGES，允许程序删除应用</p>
-<p><strong>电源管理</strong><br>android.permission.DEVICE_POWER，允许访问底层电源管理</p>
-<p><strong>应用诊断</strong><br>android.permission.DIAGNOSTIC，允许程序到RW到诊断资源</p>
-<p><strong>禁用键盘锁</strong><br>android.permission.DISABLE_KEYGUARD，允许程序禁用键盘锁</p>
-<p><strong>转存系统信息</strong><br>android.permission.DUMP，允许程序获取系统dump信息从系统服务</p>
-<p><strong>状态栏控制</strong><br>android.permission.EXPAND_STATUS_BAR，允许程序扩展或收缩状态栏</p>
-<p><strong>工厂测试模式</strong><br>android.permission.FACTORY_TEST，允许程序运行工厂测试模式</p>
-<p><strong>使用闪光灯</strong><br>android.permission.FLASHLIGHT，允许访问闪光灯</p>
-<p><strong>强制后退</strong><br>android.permission.FORCE_BACK，允许程序强制使用back后退按键，无论Activity是否在顶层</p>
-<p><strong>访问账户Gmail列表</strong><br>android.permission.GET_ACCOUNTS，访问GMail账户列表</p>
-<p><strong>获取应用大小</strong><br>android.permission.GET_PACKAGE_SIZE，获取应用的文件大小</p>
-<p><strong>获取任务信息</strong><br>android.permission.GET_TASKS，允许程序获取当前或最近运行的应用</p>
-<p><strong>允许全局搜索</strong><br>android.permission.GLOBAL_SEARCH，允许程序使用全局搜索功能</p>
-<p><strong>硬件测试</strong><br>android.permission.HARDWARE_TEST，访问硬件辅助设备，用于硬件测试</p>
-<p><strong>注射事件</strong><br>android.permission.INJECT_EVENTS，允许访问本程序的底层事件，获取按键、轨迹球的事件流</p>
-<p><strong>安装定位提供</strong><br>android.permission.INSTALL_LOCATION_PROVIDER，安装定位提供</p>
-<p><strong>安装应用程序</strong><br>android.permission.INSTALL_PACKAGES，允许程序安装应用</p>
-<p><strong>内部系统窗口</strong><br>android.permission.INTERNAL_SYSTEM_WINDOW，允许程序打开内部窗口，不对第三方应用程序开放此权限</p>
-<p><strong>结束后台进程</strong><br>android.permission.KILL_BACKGROUND_PROCESSES，允许程序调用killBackgroundProcesses(String).方法结束后台进程</p>
-<p><strong>管理账户 </strong><br>android.permission.MANAGE_ACCOUNTS，允许程序管理AccountManager中的账户列表</p>
-<p><strong>管理程序引用</strong><br>android.permission.MANAGE_APP_TOKENS，管理创建、摧毁、Z轴顺序，仅用于系统</p>
-<p><strong>高级权限</strong><br>android.permission.MTWEAK_USER，允许mTweak用户访问高级系统权限</p>
-<p><strong>社区权限</strong><br>android.permission.MTWEAK_FORUM，允许使用mTweak社区权限</p>
-<p><strong>软格式化</strong><br>android.permission.MASTER_CLEAR，允许程序执行软格式化，删除系统配置信息</p>
-<p><strong>修改声音设置</strong><br>android.permission.MODIFY_AUDIO_SETTINGS，修改声音设置信息</p>
-<p><strong>修改电话状态</strong><br>android.permission.MODIFY_PHONE_STATE，修改电话状态，如飞行模式，但不包含替换系统拨号器界面</p>
-<p><strong>格式化文件系统</strong><br>android.permission.MOUNT_FORMAT_FILESYSTEMS，格式化可移动文件系统，比如格式化清空SD卡</p>
-<p><strong>挂载文件系统</strong><br>android.permission.MOUNT_UNMOUNT_FILESYSTEMS，挂载、反挂载外部文件系统</p>
-<p><strong>允许NFC通讯</strong><br>android.permission.NFC，允许程序执行NFC近距离通讯操作，用于移动支持</p>
-<p><strong>永久Activity</strong><br>android.permission.PERSISTENT_ACTIVITY，创建一个永久的Activity，该功能标记为将来将被移除</p>
-<p><strong>处理拨出电话</strong><br>android.permission.PROCESS_OUTGOING_CALLS，允许程序监视，修改或放弃播出电话</p>
-<p><strong>读取日程提醒</strong><br>android.permission.READ_CALENDAR，允许程序读取用户的日程信息</p>
-<p><strong>读取联系人</strong><br>android.permission.READ_CONTACTS，允许应用访问联系人通讯录信息</p>
-<p><strong>屏幕截图</strong><br>android.permission.READ_FRAME_BUFFER，读取帧缓存用于屏幕截图</p>
-<p><strong>读取收藏夹和历史记录</strong><br>com.android.browser.permission.READ_HISTORY_BOOKMARKS，读取浏览器收藏夹和历史记录</p>
-<p><strong>读取输入状态</strong><br>android.permission.READ_INPUT_STATE，读取当前键的输入状态，仅用于系统</p>
-<p><strong>读取系统日志</strong><br>android.permission.READ_LOGS，读取系统底层日志</p>
-<p><strong>读取电话状态</strong><br>android.permission.READ_PHONE_STATE，访问电话状态</p>
-<p><strong>读取短信内容</strong><br>android.permission.READ_SMS，读取短信内容</p>
-<p><strong>读取同步设置</strong><br>android.permission.READ_SYNC_SETTINGS，读取同步设置，读取Google在线同步设置</p>
-<p><strong>读取同步状态</strong><br>android.permission.READ_SYNC_STATS，读取同步状态，获得Google在线同步状态</p>
-<p><strong>重启设备</strong><br>android.permission.REBOOT，允许程序重新启动设备</p>
-<p><strong>开机自动允许</strong><br>android.permission.RECEIVE_BOOT_COMPLETED，允许程序开机自动运行</p>
-<p><strong>接收彩信</strong><br>android.permission.RECEIVE_MMS，接收彩信</p>
-<p><strong>接收短信</strong><br>android.permission.RECEIVE_SMS，接收短信</p>
-<p><strong>接收Wap Push</strong><br>android.permission.RECEIVE_WAP_PUSH，接收WAP PUSH信息</p>
-<p><strong>录音</strong><br>android.permission.RECORD_AUDIO，录制声音通过手机或耳机的麦克</p>
-<p><strong>排序系统任务</strong><br>android.permission.REORDER_TASKS，重新排序系统Z轴运行中的任务</p>
-<p><strong>结束系统任务</strong><br>android.permission.RESTART_PACKAGES，结束任务通过restartPackage(String)方法，该方式将在外来放弃</p>
-<p><strong>发送短信</strong><br>android.permission.SEND_SMS，发送短信</p>
-<p><strong>设置Activity观察其</strong><br>android.permission.SET_ACTIVITY_WATCHER，设置Activity观察器一般用于monkey测试</p>
-<p><strong>设置闹铃提醒</strong><br>com.android.alarm.permission.SET_ALARM，设置闹铃提醒</p>
-<p><strong>设置总是退出</strong><br>android.permission.SET_ALWAYS_FINISH，设置程序在后台是否总是退出</p>
-<p><strong>设置动画缩放</strong><br>android.permission.SET_ANIMATION_SCALE，设置全局动画缩放</p>
-<p><strong>设置调试程序</strong><br>android.permission.SET_DEBUG_APP，设置调试程序，一般用于开发</p>
-<p><strong>设置屏幕方向</strong><br>android.permission.SET_ORIENTATION，设置屏幕方向为横屏或标准方式显示，不用于普通应用</p>
-<p><strong>设置应用参数</strong><br>android.permission.SET_PREFERRED_APPLICATIONS，设置应用的参数，已不再工作具体查看addPackageToPreferred(String)介绍</p>
-<p><strong>设置进程限制</strong><br>android.permission.SET_PROCESS_LIMIT，允许程序设置最大的进程数量的限制</p>
-<p><strong>设置系统时间</strong><br>android.permission.SET_TIME，设置系统时间</p>
-<p><strong>设置系统时区</strong><br>android.permission.SET_TIME_ZONE，设置系统时区</p>
-<p><strong>设置桌面壁纸</strong><br>android.permission.SET_WALLPAPER，设置桌面壁纸</p>
-<p><strong>设置壁纸建议</strong><br>android.permission.SET_WALLPAPER_HINTS，设置壁纸建议</p>
-<p><strong>发送永久进程信号</strong><br>android.permission.SIGNAL_PERSISTENT_PROCESSES，发送一个永久的进程信号</p>
-<p><strong>状态栏控制</strong><br>android.permission.STATUS_BAR，允许程序打开、关闭、禁用状态栏</p>
-<p><strong>访问订阅内容</strong><br>android.permission.SUBSCRIBED_FEEDS_READ，访问订阅信息的数据库</p>
-<p><strong>写入订阅内容</strong><br>android.permission.SUBSCRIBED_FEEDS_WRITE，写入或修改订阅内容的数据库</p>
-<p><strong>显示系统窗口</strong><br>android.permission.SYSTEM_ALERT_WINDOW，显示系统窗口</p>
-<p><strong>更新设备状态</strong><br>android.permission.UPDATE_DEVICE_STATS，更新设备状态</p>
-<p><strong>使用证书</strong><br>android.permission.USE_CREDENTIALS，允许程序请求验证从AccountManager</p>
-<p><strong>使用SIP视频</strong><br>android.permission.USE_SIP，允许程序使用SIP视频服务</p>
-<p><strong>使用振动</strong><br>android.permission.VIBRATE，允许振动</p>
-<p><strong>唤醒锁定</strong><br>android.permission.WAKE_LOCK，允许程序在手机屏幕关闭后后台进程仍然运行</p>
-<p><strong>写入GPRS接入点设置</strong><br>android.permission.WRITE_APN_SETTINGS，写入网络GPRS接入点设置</p>
-<p><strong>写入日程提醒</strong><br>android.permission.WRITE_CALENDAR，写入日程，但不可读取</p>
-<p><strong>写入联系人</strong><br>android.permission.WRITE_CONTACTS，写入联系人，但不可读取</p>
-<p><strong>写入外部存储</strong><br>android.permission.WRITE_EXTERNAL_STORAGE，允许程序写入外部存储，如SD卡上写文件</p>
-<p><strong>写入Google地图数据</strong><br>android.permission.WRITE_GSERVICES，允许程序写入Google Map服务数据</p>
-<p><strong>写入收藏夹和历史记录</strong><br>com.android.browser.permission.WRITE_HISTORY_BOOKMARKS，写入浏览器历史记录或收藏夹，但不可读取</p>
-<p><strong>读写系统敏感设置</strong><br>android.permission.WRITE_SECURE_SETTINGS，允许程序读写系统安全敏感的设置项</p>
-<p><strong>读写系统设置</strong><br>android.permission.WRITE_SETTINGS，允许读写系统设置项</p>
-<p><strong>编写短信</strong><br>android.permission.WRITE_SMS，允许编写短信</p>
-<p><strong>写入在线同步设置</strong><br>android.permission.WRITE_SYNC_SETTINGS，写入Google在线同步设置</p>
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
+<p><strong>（1）Explicitly Intent（显式）</strong></p>
+<p>当明确知道你想打开哪个Component时，它就是你的菜。通常这样使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent intent = new Intent(this, MainActivity.class);</div><div class="line">intent.putExtra(&quot;key&quot;, &quot;value&quot;);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<p>执行以上代码会导致目标Component（这里是MainActivity）被创建（onCreate等一系列生命周期方法被调用）。在MainAcitivity中的相应生命周期方法中通过getIntent.getXxxExtra(“key”)即可得到随Intent一起传过来的数据。</p>
+<p><strong>（2）Implicitly Intent（隐式）</strong></p>
+<p>Implicitly Intent很好的实现了调用者和被调用者之间的解耦：</p>
+<p>调用者通过action、data、category这三个方面描述他的Intent，被调用者通过在manifest文件中声明的一系列<a href="http://www.codeceo.com/article/android-intent-filter.html" target="_blank" rel="external">Intent Filter</a>来描述自己能够响应哪些意图。如此一来，调用者和被调用者无需互相了解，通过Implicitly Intent这个联系他们的纽带就能很好的协同工作。</p>
+<p>关于Intent更加详细的介绍，大家可以参考官方文档或是相关博文，这里主要介绍下Implicitly Intent的匹配规则。</p>
+<p><strong>2.Intent Filter匹配规则</strong></p>
+<p>只有action、data、category三方都匹配，Intent才算是匹配成功，进而才能打开相应的Component。一个Component若声明了多个Intent Filter，只需要匹配任意一个即可启动该组件。</p>
+<p><strong>（1）action的匹配规则</strong></p>
+<p>一个Intent Filter中可声明多个action，Intent中的action与其中的任一个action在字符串形式上完全相同（注意，区分大小写），action方面就匹配成功。可通过setAction方法为Intent设置action，也可在构造Intent时传入action。需要注意的是，隐式Intent必须指定action。比如我们在Manifest文件中为MyActivity定义了如下Intent Filter：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;intent-filter&gt;</div><div class="line">    &lt;action android:name=&quot;android.intent.action.SEND&quot;/&gt;</div><div class="line">    &lt;action android:name=&quot;android.intent.action.SEND_TO&quot;/&gt;</div><div class="line">&lt;/intent-filter&gt;</div></pre></td></tr></table></figure>
+<p>那么只要Intent的action为“SEND”或“SEND_TO”，那么这个Intent在action方面就能和上面那个Activity匹配成功。比如我们的Intent定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Intent intent = new Intent(&quot;android.intent.action.SEND&quot;)</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>那么我们的Intent在action方面就与MyActivity匹配了。</p>
+<p>Android系统预定义了许多action，这些action代表了一些常见的操作。常见action如下（Intent类中的常量）：</p>
+<ul>
+<li>Intent.ACTION_VIEW</li>
+<li>Intent.ACTION_DIAL</li>
+<li>Intent.ACTION_SENDTO</li>
+<li>Intent.ACTION_SEND</li>
+<li>Intent.ACTION_WEB_SEARCH</li>
+</ul>
+<p><strong>（2）data的匹配规则</strong></p>
+<p>data可进一步分为uri（由scheme、host、port、path | pathPattern | pathPrefix这4部分组成）和mimetype。Intent的uri可通过setData方法设置，mimetype可通过setType方法设置。隐式Intent也必须指定data。同action类似，只要Intent的data只要与Intent Filter中的任一个data声明完全相同，data方面就匹配成功。需要注意的是：若Intent Filter的data声明部分未指定uri，则缺省uri为content或file，Intent中的uri的scheme部分需为content或file才能匹配；若要为Intent指定完整的data，必须用setDataAndType方法，原因请看setData和setType方法的源码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public Intent setData(Uri data) &#123;</div><div class="line">    mData = data;</div><div class="line">    mType = null;</div><div class="line">    return this;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public Intent setType(String type) &#123;</div><div class="line">    mData = null;</div><div class="line">    mType = type;</div><div class="line">    return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>从以上代码可以看到，setData会把mimeType置为null，setType会把uri置为null。下面我们来举例说明一下data的匹配。首先我们先来看一下Intent Filter中指定data的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;data android:scheme=&quot;...“ </div><div class="line">          android:host=&quot;...&quot;</div><div class="line">          android:port=&quot;...&quot;</div><div class="line">          android:path=&quot;...&quot;</div><div class="line">          android:pathPattern=&quot;...&quot;</div><div class="line">          android:pathPrefix=&quot;...&quot;</div><div class="line">          android:mimeType=&quot;...&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>其中scheme、host等各个部分无需全部指定。假如我们为MyActivity的Intent Filter指定了如下data：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;intent-filter&gt;</div><div class="line">    &lt;data android:mimeType=&quot;vidoe/mpeg&quot; android:scheme=&quot;http&quot; android:host=&quot;www.xxx.com&quot; /&gt;</div><div class="line">    &lt;data android:mimeType=&quot;text/plain&quot; android:scheme=&quot;http&quot; /&gt;</div><div class="line">&lt;/intent-filter&gt;</div></pre></td></tr></table></figure>
+<p>那么我们的Intent想要匹配，mimeType可以为”text/plain”或“video/mpeg”,scheme必须为”http“，host则没有限制，因为第二个data没有指定host。</p>
+<p><strong>（3）category的匹配规则</strong></p>
+<p>与action和data不同，Intent中的category必须都在Intent Filter中出现才算匹配成功。Intent可以不指定category，若Intent中未指定category，系统会自动为它带上“android.intent.category.DEFAULT”。所以，想要接收Implicitly Intent的Component都必须在manifest文件中的Intent Filter声明中带上“android.intent.category.DEFAULT”。我们可以通过addCategory方法为Intent添加category。</p>
+<p><strong>（4）查询是否有可接收指定Intent的Component</strong></p>
+<p>采用PackageManager的resolveActivity或者Intent的resolveActivity方法会获得最适合Intent的一个Activity；调用PackageManager的queryIntentActivities会返回所有成功匹配Intent的Activity。</p>
 
-<p><strong>访问登记属性</strong><br>android.permission.ACCESS_CHECKIN_PROPERTIES ，读取或写入登记check-in数据库属性表的权限</p>
-<p><strong>获取错略位置</strong><br>android.permission.ACCESS_COARSE_LOCATION，通过WiFi或移动基站的方式获取用户错略的经纬度信息，定位精度大概误差在30~1500米</p>
-<p><strong>获取精确位置</strong><br>android.permission.ACCESS_FINE_LOCATION，通过GPS芯片接收卫星的定位信息，定位精度达10米以内</p>
-<p><strong>访问定位额外命令</strong><br>android.permission.ACCESS_LOCATION_EXTRA_COMMANDS，允许程序访问额外的定位提供者指令</p>
-<p><strong>GPS定位获取模拟定位信息</strong><br>android.permission.ACCESS_MOCK_LOCATION，获取模拟定位信息，一般用于帮助开发者调试应用</p>
-<p><strong>获取网络状态</strong><br>android.permission.ACCESS_NETWORK_STATE，获取网络信息状态，如当前的网络连接是否有效</p>
-<p><strong>访问Surface Flinger</strong><br>android.permission.ACCESS_SURFACE_FLINGER，Android平台上底层的图形显示支持，一般用于游戏或照相机预览界面和底层模式的屏幕截图</p>
-<p><strong>获取WiFi状态</strong><br>android.permission.ACCESS_WIFI_STATE，获取当前WiFi接入的状态以及WLAN热点的信息</p>
-<p><strong>账户管理</strong><br>android.permission.ACCOUNT_MANAGER，获取账户验证信息，主要为GMail账户信息，只有系统级进程才能访问的权限</p>
-<p><strong>验证账户</strong><br>android.permission.AUTHENTICATE_ACCOUNTS，允许一个程序通过账户验证方式访问账户管理ACCOUNT_MANAGER相关信息</p>
-<p><strong>电量统计</strong><br>android.permission.BATTERY_STATS，获取电池电量统计信息</p>
-<p><strong>绑定小插件</strong><br>android.permission.BIND_APPWIDGET，允许一个程序告诉appWidget服务需要访问小插件的数据库，只有非常少的应用才用到此权限</p>
-<p><strong>绑定设备管理</strong><br>android.permission.BIND_DEVICE_ADMIN，请求系统管理员接收者receiver，只有系统才能使用</p>
-<p><strong>绑定输入法</strong><br>android.permission.BIND_INPUT_METHOD ，请求InputMethodService服务，只有系统才能使用</p>
-<p><strong>绑定RemoteView</strong><br>android.permission.BIND_REMOTEVIEWS，必须通过RemoteViewsService服务来请求，只有系统才能用</p>
-<p><strong>绑定壁纸</strong><br>android.permission.BIND_WALLPAPER，必须通过WallpaperService服务来请求，只有系统才能用</p>
-<p><strong>使用蓝牙</strong><br>android.permission.BLUETOOTH，允许程序连接配对过的蓝牙设备</p>
-<p><strong>蓝牙管理</strong><br>android.permission.BLUETOOTH_ADMIN，允许程序进行发现和配对新的蓝牙设备</p>
-<p><strong>变成砖头</strong><br>android.permission.BRICK，能够禁用手机，非常危险，顾名思义就是让手机变成砖头</p>
-<p><strong>应用删除时广播</strong><br>android.permission.BROADCAST_PACKAGE_REMOVED，当一个应用在删除时触发一个广播</p>
-<p><strong>收到短信时广播</strong><br>android.permission.BROADCAST_SMS，当收到短信时触发一个广播</p>
-<p><strong>连续广播</strong><br>android.permission.BROADCAST_STICKY，允许一个程序收到广播后快速收到下一个广播</p>
-<p><strong>WAP PUSH广播</strong><br>android.permission.BROADCAST_WAP_PUSH，WAP PUSH服务收到后触发一个广播</p>
-<p><strong>拨打电话</strong><br>android.permission.CALL_PHONE，允许程序从非系统拨号器里输入电话号码</p>
-<p><strong>通话权限</strong><br>android.permission.CALL_PRIVILEGED，允许程序拨打电话，替换系统的拨号器界面</p>
-<p><strong>拍照权限</strong><br>android.permission.CAMERA，允许访问摄像头进行拍照</p>
-<p><strong>改变组件状态</strong><br>android.permission.CHANGE_COMPONENT_ENABLED_STATE，改变组件是否启用状态</p>
-<p><strong>改变配置</strong><br>android.permission.CHANGE_CONFIGURATION，允许当前应用改变配置，如定位</p>
-<p><strong>改变网络状态</strong><br>android.permission.CHANGE_NETWORK_STATE，改变网络状态如是否能联网</p>
-<p><strong>改变WiFi多播状态</strong><br>android.permission.CHANGE_WIFI_MULTICAST_STATE，改变WiFi多播状态</p>
-<p><strong>改变WiFi状态</strong><br>android.permission.CHANGE_WIFI_STATE，改变WiFi状态</p>
-<p><strong>清除应用缓存</strong><br>android.permission.CLEAR_APP_CACHE，清除应用缓存</p>
-<p><strong>清除用户数据</strong><br>android.permission.CLEAR_APP_USER_DATA，清除应用的用户数据</p>
-</uses-permission>
       
 
       
@@ -381,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzaf3wk00072sugjxh21xj2.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzah3m20004o0ugng50fiok.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -395,18 +315,18 @@
   
 <nav id="article-nav">
   
-    <a href="/cjuzaf3wb00042sugcloak8am.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/cjuzah3mr000ao0ug0uzuvlcj.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Android中的Intent Filter匹配规则
+          ViewDragHelper(拖拽)的用法
         
       </div>
     </a>
   
   
-    <a href="/cjuzaf3wf00052sug8kz446kr.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android常用URI收藏“</div>
+    <a href="/cjuzah3mm0007o0ugawf7jgcr.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android系统常用权限大全</div>
       <i class="icon-circle-right"></i>
     </a>
   

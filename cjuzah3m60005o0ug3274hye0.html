@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Android中的Intent Filter匹配规则 | zehua的个人博客</title>
+  <title>Android常用URI收藏“ | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.Intent简介 Intent用于在一个组件（Component，如Activity、Service、Broadcast Receiver）中打开另一个组件。 Intent可分为隐式（implicitly）和显式（explicitly）两种：  Explicitly Intent：在知道要打开哪个具体的Component时使用，通过指定调用者和被调用者即可打开目标Component； Impl">
+  <meta name="description" content="以下是常用到的Intent的URI及其示例，包含了大部分应用中用到的共用Intent 一、打开一个网页，类别是Intent.ACTION_VIEW 12Uri uri = Uri.parse(&quot;http://www.android-study.com/&quot;);Intent intent = new Intent(Intent.ACTION_VIEW, uri); 二、打开地图并定位到一个点 12Ur">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android中的Intent Filter匹配规则">
-<meta property="og:url" content="http://www.gzehua.cn/cjuzaf3wb00042sugcloak8am.html">
+<meta property="og:title" content="Android常用URI收藏“">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzah3m60005o0ug3274hye0.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="1.Intent简介 Intent用于在一个组件（Component，如Activity、Service、Broadcast Receiver）中打开另一个组件。 Intent可分为隐式（implicitly）和显式（explicitly）两种：  Explicitly Intent：在知道要打开哪个具体的Component时使用，通过指定调用者和被调用者即可打开目标Component； Impl">
+<meta property="og:description" content="以下是常用到的Intent的URI及其示例，包含了大部分应用中用到的共用Intent 一、打开一个网页，类别是Intent.ACTION_VIEW 12Uri uri = Uri.parse(&quot;http://www.android-study.com/&quot;);Intent intent = new Intent(Intent.ACTION_VIEW, uri); 二、打开地图并定位到一个点 12Ur">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T08:58:48.258Z">
+<meta property="og:updated_time" content="2019-04-27T07:41:25.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android中的Intent Filter匹配规则">
-<meta name="twitter:description" content="1.Intent简介 Intent用于在一个组件（Component，如Activity、Service、Broadcast Receiver）中打开另一个组件。 Intent可分为隐式（implicitly）和显式（explicitly）两种：  Explicitly Intent：在知道要打开哪个具体的Component时使用，通过指定调用者和被调用者即可打开目标Component； Impl">
+<meta name="twitter:title" content="Android常用URI收藏“">
+<meta name="twitter:description" content="以下是常用到的Intent的URI及其示例，包含了大部分应用中用到的共用Intent 一、打开一个网页，类别是Intent.ACTION_VIEW 12Uri uri = Uri.parse(&quot;http://www.android-study.com/&quot;);Intent intent = new Intent(Intent.ACTION_VIEW, uri); 二、打开地图并定位到一个点 12Ur">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -158,71 +158,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android中的Intent-Filter匹配规则" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android常用URI收藏“" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Android中的Intent Filter匹配规则
+      Android常用URI收藏“
     </h1>
   
 
         
-        <a href="/cjuzaf3wb00042sugcloak8am.html" class="archive-article-date">
-  	<time datetime="2016-08-25T08:48:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-25</time>
+        <a href="/cjuzah3m60005o0ug3274hye0.html" class="archive-article-date">
+  	<time datetime="2016-06-18T11:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>1.Intent简介</strong></p>
-<p>Intent用于在一个组件（Component，如Activity、Service、Broadcast Receiver）中打开另一个组件。</p>
-<p>Intent可分为隐式（implicitly）和显式（explicitly）两种：</p>
-<ul>
-<li>Explicitly Intent：在知道要打开哪个具体的Component时使用，通过指定调用者和被调用者即可打开目标Component；</li>
-<li>Implicitly Intent：在不确切的知道要打开哪个Component的情况下，通过指出action、data、category，系统会寻找到匹配的Component。</li>
-</ul>
+        <p>以下是常用到的Intent的URI及其示例，包含了大部分应用中用到的共用Intent</p>
+<p>一、打开一个网页，类别是Intent.ACTION_VIEW</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"http://www.android-study.com/"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div></pre></td></tr></table></figure>
+<p>二、打开地图并定位到一个点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"geo:52.76,-79.0342"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p><strong>（1）Explicitly Intent（显式）</strong></p>
-<p>当明确知道你想打开哪个Component时，它就是你的菜。通常这样使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent intent = new Intent(this, MainActivity.class);</div><div class="line">intent.putExtra(&quot;key&quot;, &quot;value&quot;);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
-<p>执行以上代码会导致目标Component（这里是MainActivity）被创建（onCreate等一系列生命周期方法被调用）。在MainAcitivity中的相应生命周期方法中通过getIntent.getXxxExtra(“key”)即可得到随Intent一起传过来的数据。</p>
-<p><strong>（2）Implicitly Intent（隐式）</strong></p>
-<p>Implicitly Intent很好的实现了调用者和被调用者之间的解耦：</p>
-<p>调用者通过action、data、category这三个方面描述他的Intent，被调用者通过在manifest文件中声明的一系列<a href="http://www.codeceo.com/article/android-intent-filter.html" target="_blank" rel="external">Intent Filter</a>来描述自己能够响应哪些意图。如此一来，调用者和被调用者无需互相了解，通过Implicitly Intent这个联系他们的纽带就能很好的协同工作。</p>
-<p>关于Intent更加详细的介绍，大家可以参考官方文档或是相关博文，这里主要介绍下Implicitly Intent的匹配规则。</p>
-<p><strong>2.Intent Filter匹配规则</strong></p>
-<p>只有action、data、category三方都匹配，Intent才算是匹配成功，进而才能打开相应的Component。一个Component若声明了多个Intent Filter，只需要匹配任意一个即可启动该组件。</p>
-<p><strong>（1）action的匹配规则</strong></p>
-<p>一个Intent Filter中可声明多个action，Intent中的action与其中的任一个action在字符串形式上完全相同（注意，区分大小写），action方面就匹配成功。可通过setAction方法为Intent设置action，也可在构造Intent时传入action。需要注意的是，隐式Intent必须指定action。比如我们在Manifest文件中为MyActivity定义了如下Intent Filter：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;intent-filter&gt;</div><div class="line">    &lt;action android:name=&quot;android.intent.action.SEND&quot;/&gt;</div><div class="line">    &lt;action android:name=&quot;android.intent.action.SEND_TO&quot;/&gt;</div><div class="line">&lt;/intent-filter&gt;</div></pre></td></tr></table></figure>
-<p>那么只要Intent的action为“SEND”或“SEND_TO”，那么这个Intent在action方面就能和上面那个Activity匹配成功。比如我们的Intent定义如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Intent intent = new Intent(&quot;android.intent.action.SEND&quot;)</div><div class="line">...</div></pre></td></tr></table></figure>
-<p>那么我们的Intent在action方面就与MyActivity匹配了。</p>
-<p>Android系统预定义了许多action，这些action代表了一些常见的操作。常见action如下（Intent类中的常量）：</p>
-<ul>
-<li>Intent.ACTION_VIEW</li>
-<li>Intent.ACTION_DIAL</li>
-<li>Intent.ACTION_SENDTO</li>
-<li>Intent.ACTION_SEND</li>
-<li>Intent.ACTION_WEB_SEARCH</li>
-</ul>
-<p><strong>（2）data的匹配规则</strong></p>
-<p>data可进一步分为uri（由scheme、host、port、path | pathPattern | pathPrefix这4部分组成）和mimetype。Intent的uri可通过setData方法设置，mimetype可通过setType方法设置。隐式Intent也必须指定data。同action类似，只要Intent的data只要与Intent Filter中的任一个data声明完全相同，data方面就匹配成功。需要注意的是：若Intent Filter的data声明部分未指定uri，则缺省uri为content或file，Intent中的uri的scheme部分需为content或file才能匹配；若要为Intent指定完整的data，必须用setDataAndType方法，原因请看setData和setType方法的源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public Intent setData(Uri data) &#123;</div><div class="line">    mData = data;</div><div class="line">    mType = null;</div><div class="line">    return this;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public Intent setType(String type) &#123;</div><div class="line">    mData = null;</div><div class="line">    mType = type;</div><div class="line">    return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>从以上代码可以看到，setData会把mimeType置为null，setType会把uri置为null。下面我们来举例说明一下data的匹配。首先我们先来看一下Intent Filter中指定data的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;data android:scheme=&quot;...“ </div><div class="line">          android:host=&quot;...&quot;</div><div class="line">          android:port=&quot;...&quot;</div><div class="line">          android:path=&quot;...&quot;</div><div class="line">          android:pathPattern=&quot;...&quot;</div><div class="line">          android:pathPrefix=&quot;...&quot;</div><div class="line">          android:mimeType=&quot;...&quot; /&gt;</div></pre></td></tr></table></figure>
-<p>其中scheme、host等各个部分无需全部指定。假如我们为MyActivity的Intent Filter指定了如下data：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;intent-filter&gt;</div><div class="line">    &lt;data android:mimeType=&quot;vidoe/mpeg&quot; android:scheme=&quot;http&quot; android:host=&quot;www.xxx.com&quot; /&gt;</div><div class="line">    &lt;data android:mimeType=&quot;text/plain&quot; android:scheme=&quot;http&quot; /&gt;</div><div class="line">&lt;/intent-filter&gt;</div></pre></td></tr></table></figure>
-<p>那么我们的Intent想要匹配，mimeType可以为”text/plain”或“video/mpeg”,scheme必须为”http“，host则没有限制，因为第二个data没有指定host。</p>
-<p><strong>（3）category的匹配规则</strong></p>
-<p>与action和data不同，Intent中的category必须都在Intent Filter中出现才算匹配成功。Intent可以不指定category，若Intent中未指定category，系统会自动为它带上“android.intent.category.DEFAULT”。所以，想要接收Implicitly Intent的Component都必须在manifest文件中的Intent Filter声明中带上“android.intent.category.DEFAULT”。我们可以通过addCategory方法为Intent添加category。</p>
-<p><strong>（4）查询是否有可接收指定Intent的Component</strong></p>
-<p>采用PackageManager的resolveActivity或者Intent的resolveActivity方法会获得最适合Intent的一个Activity；调用PackageManager的queryIntentActivities会返回所有成功匹配Intent的Activity。</p>
-
+<p>三、打开拨号界面，类型是Intent.ACTION_DIAL</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"tel:10086"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_DIAL, uri);</div></pre></td></tr></table></figure>
+<p>四、直接拨打电话，与三不同的是，这个直接拨打电话，而不是打开拨号界面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"tel:10086"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_CALL, uri);</div></pre></td></tr></table></figure>
+<p>五、卸载一个应用，Intent的类别是Intent.ACTION_DELETE</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.fromParts(<span class="string">"package"</span>, <span class="string">"xxx"</span>, <span class="keyword">null</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_DELETE, uri);</div></pre></td></tr></table></figure>
+<p>六、安装应用程序,Intent的类别是Intent.ACTION_PACKAGE_ADDED</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.fromParts(<span class="string">"package"</span>, <span class="string">"xxx"</span>, <span class="keyword">null</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_PACKAGE_ADDED, uri);</div></pre></td></tr></table></figure>
+<p>七、播放音频文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"file:///sdcard/download/everything.mp3"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">intent.setType(<span class="string">"audio/mp3"</span>);</div></pre></td></tr></table></figure>
+<p>八、打开发邮件界面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri= Uri.parse(<span class="string">"mailto:admin@android-study.com"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SENDTO, uri);</div></pre></td></tr></table></figure>
+<p>九、发邮件,与八不同这里是将邮件发送出去</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SEND);</div><div class="line">String[] tos = &#123; <span class="string">"admin@android-study.com"</span> &#125;;</div><div class="line">String[] ccs = &#123; <span class="string">"webmaster@android-study.com"</span> &#125;;</div><div class="line">intent.putExtra(Intent.EXTRA_EMAIL, tos);</div><div class="line">intent.putExtra(Intent.EXTRA_CC, ccs);</div><div class="line">intent.putExtra(Intent.EXTRA_TEXT, <span class="string">"I come from http://www.android-study.com"</span>);</div><div class="line">intent.putExtra(Intent.EXTRA_SUBJECT, <span class="string">"http://www.android-study.com"</span>);intent.setType(<span class="string">"message/rfc882"</span>);</div><div class="line">Intent.createChooser(intent, <span class="string">"Choose Email Client"</span>);</div></pre></td></tr></table></figure>
+<p>//发送带附件的邮件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SEND);</div><div class="line">intent.putExtra(Intent.EXTRA_SUBJECT, <span class="string">"The email subject text"</span>);</div><div class="line">intent.putExtra(Intent.EXTRA_STREAM, <span class="string">"file:///sdcard/mysong.mp3"</span>);</div><div class="line">intent.setType(<span class="string">"audio/mp3"</span>);</div><div class="line">startActivity(Intent.createChooser(intent, <span class="string">"Choose Email Client"</span>));</div></pre></td></tr></table></figure>
+<p>十、发短信</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Uri uri= Uri.parse(<span class="string">"tel:10086"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">intent.putExtra(<span class="string">"sms_body"</span>, <span class="string">"I come from http://www.android-study.com"</span>);</div><div class="line">intent.setType(<span class="string">"vnd.Android-dir/mms-sms"</span>);</div></pre></td></tr></table></figure>
+<p>十一、直接发短信</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Uri uri= Uri.parse(&quot;smsto://100861&quot;);</div><div class="line">Intent intent = new Intent(Intent.ACTION_SENDTO, uri);</div><div class="line">intent.putExtra(&quot;sms_body&quot;, &quot;3g android http://www.android-study.com&quot;);</div></pre></td></tr></table></figure>
+<p>十二、发彩信</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Uri uri= Uri.parse(<span class="string">"content://media/external/images/media/23"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SEND);</div><div class="line">intent.putExtra(<span class="string">"sms_body"</span>, <span class="string">"3g android http://www.android-study.com"</span>);</div><div class="line">intent.putExtra(Intent.EXTRA_STREAM, uri);</div><div class="line">intent.setType(<span class="string">"image/png"</span>);</div></pre></td></tr></table></figure>
+<p>十三、# Market 相关</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> <span class="comment">//寻找某个应用</span></div><div class="line">Uri uri = Uri.parse(<span class="string">"market://search?q=pname:pkg_name"</span>);</div><div class="line">Intent it = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">startActivity(it);</div><div class="line"><span class="comment">//where pkg_name is the full package path for an application</span></div><div class="line"></div><div class="line"><span class="number">2</span> <span class="comment">//显示某个应用的相关信息</span></div><div class="line">Uri uri = Uri.parse(<span class="string">"market://details?id=app_id"</span>);</div><div class="line">Intent it = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">startActivity(it);</div><div class="line"><span class="comment">//where app_id is the application ID, find the ID</span></div><div class="line"><span class="comment">//by clicking on your application on Market home</span></div><div class="line"><span class="comment">//page, and notice the ID from the address bar</span></div></pre></td></tr></table></figure>
+<p>十四、路径规划</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en"</span>);</div><div class="line">Intent it = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">startActivity(it);</div><div class="line"><span class="comment">//where startLat, startLng, endLat, endLng are a long with 6 decimals like: 50.123456</span></div></pre></td></tr></table></figure>
+<p>十五、安装指定apk</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setupAPK</span><span class="params">(String apkname)</span></span>&#123;</div><div class="line">    String fileName = Environment.getExternalStorageDirectory() + <span class="string">"/"</span> + apkname;</div><div class="line">    Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW);</div><div class="line">    intent.setDataAndType(Uri.fromFile(<span class="keyword">new</span> File(fileName)), <span class="string">"application/vnd.android.package-archive"</span>);</div><div class="line">    mService.startActivity(intent);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>十六、进入联系人页面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(); </div><div class="line">intent.setAction(Intent.ACTION_VIEW); </div><div class="line">intent.setData(People.CONTENT_URI); </div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<p>十七、查看指定联系人</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Uri personUri = ContentUris.withAppendedId(People.CONTENT_URI, info.id);<span class="comment">// info.id联系人ID </span></div><div class="line">Intent intent = <span class="keyword">new</span> Intent(); </div><div class="line">intent.setAction(Intent.ACTION_VIEW); </div><div class="line">intent.setData(personUri); </div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<p>十八、调用相册</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String MIME_TYPE_IMAGE_JPEG = <span class="string">"image/*"</span>; </div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> ACTIVITY_GET_IMAGE = <span class="number">0</span>; </div><div class="line">Intent getImage = <span class="keyword">new</span> Intent(Intent.ACTION_GET_CONTENT); </div><div class="line">getImage.addCategory(Intent.CATEGORY_OPENABLE); </div><div class="line">getImage.setType(MIME_TYPE_IMAGE_JPEG); </div><div class="line">startActivityForResult(getImage, ACTIVITY_GET_IMAGE);</div></pre></td></tr></table></figure>
+<p>十九、调用系统相机应用程序，并存储拍下来的照片</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(MediaStore.ACTION_IMAGE_CAPTURE); </div><div class="line">time = Calendar.getInstance().getTimeInMillis(); </div><div class="line">intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(<span class="keyword">new</span> File(Environment </div><div class="line">.getExternalStorageDirectory().getAbsolutePath()+<span class="string">"/tucue"</span>, time + <span class="string">".jpg"</span>))); </div><div class="line">startActivityForResult(intent, ACTIVITY_GET_CAMERA_IMAGE);</div></pre></td></tr></table></figure>
       
 
       
@@ -301,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzaf3wb00042sugcloak8am.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzah3m60005o0ug3274hye0.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +312,18 @@
   
 <nav id="article-nav">
   
-    <a href="/cjuzaf3x6000a2sugrbaujisv.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/cjuzah3mm0007o0ugawf7jgcr.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ViewDragHelper(拖拽)的用法
+          Android系统常用权限大全
         
       </div>
     </a>
   
   
-    <a href="/cjuzaf3wk00072sugjxh21xj2.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android系统常用权限大全</div>
+    <a href="/cjuzah3lv0001o0ugc5rzt8sc.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android中图片的三层缓存</div>
       <i class="icon-circle-right"></i>
     </a>
   
