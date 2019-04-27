@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Archives: 2017/4 | zehua的个人博客</title>
+  <title>SetContentView与LayoutInflater加载布局的源码分析 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zehua的个人博客">
-<meta property="og:url" content="http://www.gzehua.cn/archives/2017/04/index.html">
+  <meta name="description" content="1.探究SetContentView()方法 Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.  1.1 Activity中的setContentView方法(三个重载方法)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SetContentView与LayoutInflater加载布局的源码分析">
+<meta property="og:url" content="http://www.gzehua.cn/cjuz8rjmb0006qcugh66vdeva.html">
 <meta property="og:site_name" content="zehua的个人博客">
+<meta property="og:description" content="1.探究SetContentView()方法 Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.  1.1 Activity中的setContentView方法(三个重载方法)">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-27T07:49:57.191Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zehua的个人博客">
+<meta name="twitter:title" content="SetContentView与LayoutInflater加载布局的源码分析">
+<meta name="twitter:description" content="1.探究SetContentView()方法 Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.  1.1 Activity中的setContentView方法(三个重载方法)">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -154,49 +158,206 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SetContentView与LayoutInflater加载布局的源码分析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuz8rjmb0006qcugh66vdeva.html" class="archive-article-date">
-  	<time datetime="2017-04-27T06:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuz8rjmb0006qcugh66vdeva.html">SetContentView与LayoutInflater加载布局的源码分析</a>
+    <h1 class="article-title" itemprop="name">
+      SetContentView与LayoutInflater加载布局的源码分析
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/cjuz8rjmb0006qcugh66vdeva.html" class="archive-article-date">
+  	<time datetime="2017-04-27T06:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>1.探究SetContentView()方法</strong></p>
+<p>Activity 作为一个界面展示和负责与用户交互的组件,在其onCreate方法中调用setContentView()来设置需要向用户展示的界面,今天就从setContentView(layoutResID)开始来了解view的加载过程.</p>
+<ul>
+<li>1.1 Activity中的setContentView方法(三个重载方法)<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(@LayoutRes <span class="keyword">int</span> layoutResID)</span> </span>&#123;</div><div class="line">    getWindow().setContentView(layoutResID);</div><div class="line">    initWindowDecorActionBar();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    getWindow().setContentView(view);</div><div class="line">    initWindowDecorActionBar();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(View view, ViewGroup.LayoutParams params)</span> </span>&#123;</div><div class="line">    getWindow().setContentView(view, params);</div><div class="line">    initWindowDecorActionBar();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在setContentView()方法中首先调用了getWindow()方法,进入该方法发现返回了一个Window类对象,变量名为mWindow然后调用了该对象的setContentView()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public Window getWindow() &#123;</div><div class="line">    return mWindow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>1.2 Window类</li>
+</ul>
+<p>进入Window类,发现Window是一个抽象类.官方对该描述可知该类是一个顶层窗口视图以及对用户行为处理的封装基类,最重要的一点是该类有且只有一个实现类那就是PhoneWindow类;毫无疑问变量mWindow指向一定是一个PhoneWindow的实例.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Abstract base class for a top-level window look and behavior policy.  An</span></div><div class="line"><span class="comment"> * instance of this class should be used as the top-level view added to the</span></div><div class="line"><span class="comment"> * window manager. It provides standard UI policies such as a background, title</span></div><div class="line"><span class="comment"> * area, default key processing, etc.</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> * &lt;p&gt;The only existing implementation of this abstract class is</span></div><div class="line"><span class="comment"> * android.view.PhoneWindow, which you should instantiate when needing a</span></div><div class="line"><span class="comment"> * Window.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Window</span> </span>&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>mWindow最终在Acitvity的attach()方法中初始化的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">attach</span><span class="params">(Context context, ActivityThread aThread,</span></span></div><div class="line"><span class="function"><span class="params">            Instrumentation instr, IBinder token, <span class="keyword">int</span> ident,</span></span></div><div class="line"><span class="function"><span class="params">            Application application, Intent intent, ActivityInfo info,</span></span></div><div class="line"><span class="function"><span class="params">            CharSequence title, Activity parent, String id,</span></span></div><div class="line"><span class="function"><span class="params">            NonConfigurationInstances lastNonConfigurationInstances,</span></span></div><div class="line"><span class="function"><span class="params">            Configuration config, String referrer, IVoiceInteractor voiceInteractor,</span></span></div><div class="line"><span class="function"><span class="params">            Window window)</span> </span>&#123;</div><div class="line">    attachBaseContext(context);</div><div class="line"></div><div class="line">    mFragments.attachHost(<span class="keyword">null</span> <span class="comment">/*parent*/</span>);</div><div class="line"><span class="comment">//初始化PhoneWindow实例</span></div><div class="line">    mWindow = <span class="keyword">new</span> PhoneWindow(<span class="keyword">this</span>, window);</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>1.3 PhoneWindow类</li>
+</ul>
+<p>那么我们在Activity中调用的setContentView()方法最终是调用了PhoneWindow中的setContentView()方法 , 找到PhoneWindow类中的setContentView()方法看看具体做了什么操作;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentView</span><span class="params">(<span class="keyword">int</span> layoutResID)</span> </span>&#123;</div><div class="line">    <span class="comment">// Note: FEATURE_CONTENT_TRANSITIONS may be set in the process of installing the window</span></div><div class="line">    <span class="comment">// decor, when theme attributes and the like are crystalized. Do not check the feature</span></div><div class="line">    <span class="comment">// before this happens.</span></div><div class="line">    <span class="keyword">if</span> (mContentParent == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="comment">//1.创建DecorView对象和mContentParent对象  </span></div><div class="line">        installDecor();</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!hasFeature(FEATURE_CONTENT_TRANSITIONS)) &#123;</div><div class="line">        mContentParent.removeAllViews();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//2.填充Layout</span></div><div class="line">    <span class="keyword">if</span> (hasFeature(FEATURE_CONTENT_TRANSITIONS)) &#123;</div><div class="line">        <span class="comment">//Activity转场动画相关</span></div><div class="line">        <span class="keyword">final</span> Scene newScene = Scene.getSceneForLayout(mContentParent, layoutResID,</div><div class="line">                                                       getContext());</div><div class="line">        transitionTo(newScene);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//将Activity设置的布局文件，加载到mContentParent中</span></div><div class="line">        mLayoutInflater.inflate(layoutResID, mContentParent);</div><div class="line">    &#125;</div><div class="line">      mContentParent.requestApplyInsets();</div><div class="line">    <span class="comment">//3.回调通知Activity布局改变</span></div><div class="line">      <span class="keyword">final</span> Callback cb = getCallback();</div><div class="line">      <span class="keyword">if</span> (cb != <span class="keyword">null</span> &amp;&amp; !isDestroyed()) &#123;</div><div class="line">          <span class="comment">//触发Activity的onContentChanged方法</span></div><div class="line">        cb.onContentChanged();</div><div class="line">    &#125;</div><div class="line">    mContentParentExplicitlySet = <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>首先是对mContentParent判空,找到mContentParent变量的声明,mContentParent是一个ViewGroup类变量,从注释可知mContentParent是我们在Activity设置视图(用户视图)的View容器,它要么是mDecor本身,要么是所在的mDecor中的子组件;查找到mDecor的声明,mDecor就是DecorView类对象,从注释可知DecorView就是我们窗口的根节点;进入DecorView类,该类继承FrameLayout.到这里我们大体了解到一个Activity里面包含一个Window(具体实现类为PhoneWindow),而PhoneWindow里面包一个DecorView(可理解为就是一个FrameLayout);</p>
+<p>填充Layout过程:如果设置了FEATURE_CONTENT_TRANSITIONS，就会创建Scene完成转场动画。否则直接使用布局填充器将布局文件填充至mContentParent。到此为止，Activity的布局文件已经添加到DecorViewDecorView的mContentParent中;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// This is the view in which the window contents are placed. It is either</span></div><div class="line"><span class="comment">// mDecor itself, or a child of mDecor where the contents go.</span></div><div class="line">ViewGroup mContentParent;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// This is the top-level view of the window, containing the window decor.</span></div><div class="line"><span class="keyword">private</span> DecorView mDecor;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DecorView</span> <span class="keyword">extends</span> <span class="title">FrameLayout</span> <span class="keyword">implements</span> <span class="title">RootViewSurfaceTaker</span>, <span class="title">WindowCallbacks</span> </span>&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>再回到PhoneWindow类的setContentView()中;当mContentParent为null时调用installDecor()去创建DecorView;我们先来看看如何初始化mDecor的;当mDecor为null时会调用generateDecor()来创建一个DecorView对象;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">installDecor</span><span class="params">()</span> </span>&#123;</div><div class="line">    mForceDecorInstall = <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">if</span> (mDecor == <span class="keyword">null</span>) &#123;</div><div class="line">        mDecor = generateDecor(-<span class="number">1</span>);</div><div class="line">      	<span class="comment">//setDescendantFocusability()设置ViewGroup和其子view获取焦点顺序</span></div><div class="line">        mDecor.setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);</div><div class="line">        mDecor.setIsRootNamespace(<span class="keyword">true</span>);</div><div class="line">        <span class="keyword">if</span> (!mInvalidatePanelMenuPosted &amp;&amp; mInvalidatePanelMenuFeatures != <span class="number">0</span>) &#123;</div><div class="line">            mDecor.postOnAnimation(mInvalidatePanelMenuRunnable);</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        mDecor.setWindow(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (mContentParent == <span class="keyword">null</span>) &#123;</div><div class="line">        mContentParent = generateLayout(mDecor);</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>到这里顺便提一下setDescendantFocusability()方法,因为我们在日常开发中经常遇到ListView的item中包含ImageButton、Button、CheckBox等默认抢占焦点的控件时会导致item无法获取点击事件;我们常用处理方式让这子控件的默认获取焦点设置为false ; 其实也可以通过setDescendantFocusability()来解决这个问题:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">在ViewGroup中定义了三个<span class="keyword">int</span>型常量分别是:</div><div class="line"> FOCUS_BEFORE_DESCENDANTS 含义:viewgroup会优先其子类控件而获取到焦点</div><div class="line"> FOCUS_AFTER_DESCENDANTS 含义:viewgroup只有当其子类控件不需要获取焦点时才获取焦点</div><div class="line"> FOCUS_BLOCK_DESCENDANTS 含义:viewgroup会覆盖子类控件而直接获得焦点</div><div class="line"> 面对ListView条目焦点被抢占问题时我们在item布局的根节点加上<span class="string">"android:descendantFocusability=”blocksDescendants"</span>的属性也能解决;</div></pre></td></tr></table></figure>
+<p>继续回到installDecor()方法中,当mContentParent为null时调用generateLayout(mDecor)返回值赋给mContentParent;在generateLayout()方法中首先是调用getWindowStyle()去获取窗口的样式属性,也就是我们在theme中定义的窗口属性,后续就是解析样式属性值来设置窗口的Feature;然后根据Feature的值填充相应的xml布局到我们创建的DecorView中;</p>
+<p>从这个执行流程中可知Feature的设置必须在DecorView填充xml布局前才有效,因为requestFeature()方法中只是对features值做了一系列的位运算,并没有重新触发inflate布局到DecorView中;<strong>由此也解释了我们在Activity中设置窗口无标题栏:getWindow().requestFeature(Window.FEATURE_NO_TITLE)的代码必须放在setContentView()之前的原因;</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">    <span class="function"><span class="keyword">protected</span> ViewGroup <span class="title">generateLayout</span><span class="params">(DecorView decor)</span> </span>&#123;</div><div class="line">        <span class="comment">// Apply data from current theme.</span></div><div class="line">        TypedArray a = getWindowStyle();</div><div class="line">		</div><div class="line">  		...</div><div class="line">         <span class="comment">//这些都是根据你在theme中的设置去设置的</span></div><div class="line">  		<span class="comment">//如:窗口是否浮动</span></div><div class="line">        mIsFloating = a.getBoolean(R.styleable.Window_windowIsFloating, <span class="keyword">false</span>);</div><div class="line">        <span class="keyword">int</span> flagsToUpdate = (FLAG_LAYOUT_IN_SCREEN|FLAG_LAYOUT_INSET_DECOR)</div><div class="line">                &amp; (~getForcedWindowFlags());</div><div class="line">        <span class="keyword">if</span> (mIsFloating) &#123;</div><div class="line">            setLayout(WRAP_CONTENT, WRAP_CONTENT);</div><div class="line">            setFlags(<span class="number">0</span>, flagsToUpdate);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            setFlags(FLAG_LAYOUT_IN_SCREEN|FLAG_LAYOUT_INSET_DECOR, flagsToUpdate);</div><div class="line">        &#125;</div><div class="line">		<span class="comment">//如:窗口是否有标题栏</span></div><div class="line">        <span class="keyword">if</span> (a.getBoolean(R.styleable.Window_windowNoTitle, <span class="keyword">false</span>)) &#123;</div><div class="line">            requestFeature(FEATURE_NO_TITLE);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a.getBoolean(R.styleable.Window_windowActionBar, <span class="keyword">false</span>)) &#123;</div><div class="line">            <span class="comment">// Don't allow an action bar if there is no title.</span></div><div class="line">            requestFeature(FEATURE_ACTION_BAR);</div><div class="line">        &#125;</div><div class="line">		....</div><div class="line">          <span class="comment">//这里是根据我们设置的Feature来填充不同的布局到DecorView中</span></div><div class="line">          <span class="comment">//前面我们通过generateDecor()方法创建一个DecorView对象(DecorView继承FrameLayout),该对象通过generateLayout(DecorView decor)传入generateLayout方法中,此时的decor其实还是一个内容为空的FrameLayout,就在如下代码中根据我们设置的features值来填充相应xml布局到decor;</span></div><div class="line">          <span class="comment">// Inflate the window decor.</span></div><div class="line">        <span class="keyword">int</span> layoutResource;</div><div class="line">        <span class="keyword">int</span> features = getLocalFeatures();</div><div class="line">        <span class="comment">// System.out.println("Features: 0x" + Integer.toHexString(features));</span></div><div class="line">        <span class="keyword">if</span> ((features &amp; (<span class="number">1</span> &lt;&lt; FEATURE_SWIPE_TO_DISMISS)) != <span class="number">0</span>) &#123;</div><div class="line">            layoutResource = R.layout.screen_swipe_dismiss;</div><div class="line">            setCloseOnSwipeEnabled(<span class="keyword">true</span>);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((features &amp; ((<span class="number">1</span> &lt;&lt; FEATURE_LEFT_ICON) | (<span class="number">1</span> &lt;&lt; FEATURE_RIGHT_ICON))) != <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (mIsFloating) &#123;</div><div class="line">                TypedValue res = <span class="keyword">new</span> TypedValue();</div><div class="line">                getContext().getTheme().resolveAttribute(</div><div class="line">                        R.attr.dialogTitleIconsDecorLayout, res, <span class="keyword">true</span>);</div><div class="line">                layoutResource = res.resourceId;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                layoutResource = R.layout.screen_title_icons;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">// XXX Remove this once action bar supports these features.</span></div><div class="line">            removeFeature(FEATURE_ACTION_BAR);</div><div class="line">            <span class="comment">// System.out.println("Title Icons!");</span></div><div class="line">        &#125;</div><div class="line">  		...</div><div class="line">  		<span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// Embedded, so no decoration is needed.</span></div><div class="line">            layoutResource = R.layout.screen_simple;</div><div class="line">            <span class="comment">// System.out.println("Simple!");</span></div><div class="line">        &#125;</div><div class="line">     	...</div><div class="line">        mDecor.startChanging();</div><div class="line">  		<span class="comment">//下一行代码等于ViewGroup root =(ViewGroup) inflater.inflate(layoutResource, null),然后把root添加到mDecor中,layoutResource就是系统填充到mDecor中的布局xml</span></div><div class="line">        mDecor.onResourcesLoaded(mLayoutInflater, layoutResource);</div><div class="line">		<span class="comment">//line:2581</span></div><div class="line">  		<span class="comment">//ID_ANDROID_CONTENT=com.android.internal.R.id.content;</span></div><div class="line">        ViewGroup contentParent = (ViewGroup)findViewById(ID_ANDROID_CONTENT);</div><div class="line">  		...</div><div class="line">        <span class="keyword">return</span> contentParent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>继续到代码的2581行,通过findViewById(id)找到布局中一个id为content的ViewGroup对象contentParent,并返回这个对象赋值给了mContentParent; 找到系统填充到mDecor中的那个布局文件,看看这个布局xml文件的结构:(以screen_simple.xml文件为例)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:fitsSystemWindows</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--系统的actionBar--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ViewStub</span> <span class="attr">android:id</span>=<span class="string">"@+id/action_mode_bar_stub"</span></span></div><div class="line"><span class="tag">              <span class="attr">android:inflatedId</span>=<span class="string">"@+id/action_mode_bar"</span></span></div><div class="line"><span class="tag">              <span class="attr">android:layout</span>=<span class="string">"@layout/action_mode_bar"</span></span></div><div class="line"><span class="tag">              <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">              <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">              <span class="attr">android:theme</span>=<span class="string">"?attr/actionBarTheme"</span> /&gt;</span></div><div class="line">  	<span class="comment">&lt;!--id为content;mContentParent就是这FrameLayout;我们自己在layout中定义的布局就是添加到这个FrameLayout中的--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">FrameLayout</span></span></div><div class="line"><span class="tag">         <span class="attr">android:id</span>=<span class="string">"@android:id/content"</span></span></div><div class="line"><span class="tag">         <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">         <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">         <span class="attr">android:foregroundInsidePadding</span>=<span class="string">"false"</span></span></div><div class="line"><span class="tag">         <span class="attr">android:foregroundGravity</span>=<span class="string">"fill_horizontal|top"</span></span></div><div class="line"><span class="tag">         <span class="attr">android:foreground</span>=<span class="string">"?android:attr/windowContentOverlay"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>-Window是个抽象类,提供一套通用窗口绘制的API;</p>
+<p>-PhoneWindow是Window的具体实现类,其内部包含一个DecorView对象;<br> 该DecorView对象是窗口(即Activity界面)的根节点;</p>
+<p>-DecorView是FrameLayout的子类,</p>
+<h4 id="2-LayoutInflater布局加载"><a href="#2-LayoutInflater布局加载" class="headerlink" title="2.LayoutInflater布局加载"></a>2.LayoutInflater布局加载</h4><p>在PhoneWindow.java的setContentView(layout_id)中通过mLayoutInflater.inflate(layoutResID, mContentParent);来加载解析我们定义的布局xml文件,具体的过程直接进入;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> View <span class="title">inflate</span><span class="params">(XmlPullParser parser, @Nullable ViewGroup root, <span class="keyword">boolean</span> attachToRoot)</span> </span>&#123;</div><div class="line">    <span class="keyword">synchronized</span> (mConstructorArgs) &#123;</div><div class="line">        Trace.traceBegin(Trace.TRACE_TAG_VIEW, <span class="string">"inflate"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">final</span> Context inflaterContext = mContext;</div><div class="line">      	<span class="comment">//拿到布局属性</span></div><div class="line">        <span class="keyword">final</span> AttributeSet attrs = Xml.asAttributeSet(parser);</div><div class="line">        Context lastContext = (Context) mConstructorArgs[<span class="number">0</span>];</div><div class="line">        mConstructorArgs[<span class="number">0</span>] = inflaterContext;</div><div class="line">        View result = root;</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">// 获取布局xml的根节点</span></div><div class="line">            <span class="keyword">int</span> type;</div><div class="line">            <span class="keyword">while</span> ((type = parser.next()) != XmlPullParser.START_TAG &amp;&amp;</div><div class="line">                    type != XmlPullParser.END_DOCUMENT) &#123;</div><div class="line">                <span class="comment">// Empty</span></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (type != XmlPullParser.START_TAG) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> InflateException(parser.getPositionDescription()</div><div class="line">                        + <span class="string">": No start tag found!"</span>);</div><div class="line">            &#125;</div><div class="line">			<span class="comment">//根节点的标签名</span></div><div class="line">            <span class="keyword">final</span> String name = parser.getName();</div><div class="line">          	 <span class="comment">//</span></div><div class="line">            <span class="keyword">if</span> (TAG_MERGE.equals(name)) &#123;</div><div class="line">                <span class="keyword">if</span> (root == <span class="keyword">null</span> || !attachToRoot) &#123;</div><div class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> InflateException(<span class="string">"&lt;merge /&gt; can be used only with a valid "</span></div><div class="line">                            + <span class="string">"ViewGroup root and attachToRoot=true"</span>);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                rInflate(parser, root, inflaterContext, attrs, <span class="keyword">false</span>);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="comment">// Temp is the root view that was found in the xml</span></div><div class="line">                <span class="keyword">final</span> View temp = createViewFromTag(root, name, inflaterContext, attrs);</div><div class="line"></div><div class="line">                ViewGroup.LayoutParams params = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</div><div class="line">                    <span class="comment">// Create layout params that match root, if supplied</span></div><div class="line">                    params = root.generateLayoutParams(attrs);</div><div class="line">                    <span class="keyword">if</span> (!attachToRoot) &#123;</div><div class="line">                        <span class="comment">// Set the layout params for temp if we are not</span></div><div class="line">                        <span class="comment">// attaching. (If we are, we use addView, below)</span></div><div class="line">                        temp.setLayoutParams(params);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="comment">// Inflate all children under temp against its context.</span></div><div class="line">                rInflateChildren(parser, temp, attrs, <span class="keyword">true</span>);</div><div class="line"></div><div class="line">                <span class="comment">// We are supposed to attach all the views we found (int temp)</span></div><div class="line">                <span class="comment">// to root. Do that now.</span></div><div class="line">                <span class="keyword">if</span> (root != <span class="keyword">null</span> &amp;&amp; attachToRoot) &#123;</div><div class="line">                    root.addView(temp, params);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="comment">// Decide whether to return the root that was passed in or the</span></div><div class="line">                <span class="comment">// top view found in xml.</span></div><div class="line">                <span class="keyword">if</span> (root == <span class="keyword">null</span> || !attachToRoot) &#123;</div><div class="line">                    result = temp;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125; <span class="keyword">catch</span> (XmlPullParserException e) &#123;</div><div class="line">            <span class="keyword">final</span> InflateException ie = <span class="keyword">new</span> InflateException(e.getMessage(), e);</div><div class="line">            ie.setStackTrace(EMPTY_STACK_TRACE);</div><div class="line">            <span class="keyword">throw</span> ie;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            <span class="keyword">final</span> InflateException ie = <span class="keyword">new</span> InflateException(parser.getPositionDescription()</div><div class="line">                    + <span class="string">": "</span> + e.getMessage(), e);</div><div class="line">            ie.setStackTrace(EMPTY_STACK_TRACE);</div><div class="line">            <span class="keyword">throw</span> ie;</div><div class="line">        &#125; <span class="keyword">finally</span> &#123;</div><div class="line">            <span class="comment">// Don't retain static reference on context.</span></div><div class="line">            mConstructorArgs[<span class="number">0</span>] = lastContext;</div><div class="line">            mConstructorArgs[<span class="number">1</span>] = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">            Trace.traceEnd(Trace.TRACE_TAG_VIEW);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuz8rjmb0006qcugh66vdeva.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/cjuz8rjm70005qcug0ocuwyiy.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Handler消息机制
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/cjuz8rjm20003qcugjbwmxkr6.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android开发之Path详解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -219,8 +380,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
