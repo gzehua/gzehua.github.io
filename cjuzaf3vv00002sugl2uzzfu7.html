@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Android常用URI收藏“ | zehua的个人博客</title>
+  <title>Android中WebView基本使用 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下是常用到的Intent的URI及其示例，包含了大部分应用中用到的共用Intent 一、打开一个网页，类别是Intent.ACTION_VIEW 12Uri uri = Uri.parse(&quot;http://www.android-study.com/&quot;);Intent intent = new Intent(Intent.ACTION_VIEW, uri); 二、打开地图并定位到一个点 12Ur">
+  <meta name="description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android常用URI收藏“">
-<meta property="og:url" content="http://www.gzehua.cn/cjuz8uuk300025sugm5kkcl1b.html">
+<meta property="og:title" content="Android中WebView基本使用">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzaf3vv00002sugl2uzzfu7.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="以下是常用到的Intent的URI及其示例，包含了大部分应用中用到的共用Intent 一、打开一个网页，类别是Intent.ACTION_VIEW 12Uri uri = Uri.parse(&quot;http://www.android-study.com/&quot;);Intent intent = new Intent(Intent.ACTION_VIEW, uri); 二、打开地图并定位到一个点 12Ur">
+<meta property="og:description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T07:41:25.406Z">
+<meta property="og:updated_time" content="2019-04-27T09:01:05.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android常用URI收藏“">
-<meta name="twitter:description" content="以下是常用到的Intent的URI及其示例，包含了大部分应用中用到的共用Intent 一、打开一个网页，类别是Intent.ACTION_VIEW 12Uri uri = Uri.parse(&quot;http://www.android-study.com/&quot;);Intent intent = new Intent(Intent.ACTION_VIEW, uri); 二、打开地图并定位到一个点 12Ur">
+<meta name="twitter:title" content="Android中WebView基本使用">
+<meta name="twitter:description" content="对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是 1public void loadUrl(String url) &amp;#123;&amp;#125; 下面就是介绍围绕webview进行的一系列的配置。 首先如果你调用了下面代码： 12webView = (WebView) findViewById(R.id.webview);webView.loadUrl(&amp;quo">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -158,68 +158,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android常用URI收藏“" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android中WebView基本使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Android常用URI收藏“
+      Android中WebView基本使用
     </h1>
   
 
         
-        <a href="/cjuz8uuk300025sugm5kkcl1b.html" class="archive-article-date">
-  	<time datetime="2016-06-18T11:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
+        <a href="/cjuzaf3vv00002sugl2uzzfu7.html" class="archive-article-date">
+  	<time datetime="2016-09-06T05:59:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>以下是常用到的Intent的URI及其示例，包含了大部分应用中用到的共用Intent</p>
-<p>一、打开一个网页，类别是Intent.ACTION_VIEW</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"http://www.android-study.com/"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div></pre></td></tr></table></figure>
-<p>二、打开地图并定位到一个点</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"geo:52.76,-79.0342"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div></pre></td></tr></table></figure>
+        <p>对于webview的简单使用在这里不做过多的说明，使用webview加载网页的核心方法是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">public void loadUrl(String url) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>下面就是介绍围绕webview进行的一系列的配置。</p>
+<p>首先如果你调用了下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">webView = (WebView) findViewById(R.id.webview);</div><div class="line">webView.loadUrl(&quot;http://www.baidu.com&quot;);</div></pre></td></tr></table></figure>
+<p>你会发现你的app会自动打开手机系统自带的默认浏览器，这时候我们需要加一行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webView.setWebViewClient(new WebViewClient()&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>三、打开拨号界面，类型是Intent.ACTION_DIAL</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"tel:10086"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_DIAL, uri);</div></pre></td></tr></table></figure>
-<p>四、直接拨打电话，与三不同的是，这个直接拨打电话，而不是打开拨号界面</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"tel:10086"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_CALL, uri);</div></pre></td></tr></table></figure>
-<p>五、卸载一个应用，Intent的类别是Intent.ACTION_DELETE</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.fromParts(<span class="string">"package"</span>, <span class="string">"xxx"</span>, <span class="keyword">null</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_DELETE, uri);</div></pre></td></tr></table></figure>
-<p>六、安装应用程序,Intent的类别是Intent.ACTION_PACKAGE_ADDED</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.fromParts(<span class="string">"package"</span>, <span class="string">"xxx"</span>, <span class="keyword">null</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_PACKAGE_ADDED, uri);</div></pre></td></tr></table></figure>
-<p>七、播放音频文件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"file:///sdcard/download/everything.mp3"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">intent.setType(<span class="string">"audio/mp3"</span>);</div></pre></td></tr></table></figure>
-<p>八、打开发邮件界面</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Uri uri= Uri.parse(<span class="string">"mailto:admin@android-study.com"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SENDTO, uri);</div></pre></td></tr></table></figure>
-<p>九、发邮件,与八不同这里是将邮件发送出去</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SEND);</div><div class="line">String[] tos = &#123; <span class="string">"admin@android-study.com"</span> &#125;;</div><div class="line">String[] ccs = &#123; <span class="string">"webmaster@android-study.com"</span> &#125;;</div><div class="line">intent.putExtra(Intent.EXTRA_EMAIL, tos);</div><div class="line">intent.putExtra(Intent.EXTRA_CC, ccs);</div><div class="line">intent.putExtra(Intent.EXTRA_TEXT, <span class="string">"I come from http://www.android-study.com"</span>);</div><div class="line">intent.putExtra(Intent.EXTRA_SUBJECT, <span class="string">"http://www.android-study.com"</span>);intent.setType(<span class="string">"message/rfc882"</span>);</div><div class="line">Intent.createChooser(intent, <span class="string">"Choose Email Client"</span>);</div></pre></td></tr></table></figure>
-<p>//发送带附件的邮件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SEND);</div><div class="line">intent.putExtra(Intent.EXTRA_SUBJECT, <span class="string">"The email subject text"</span>);</div><div class="line">intent.putExtra(Intent.EXTRA_STREAM, <span class="string">"file:///sdcard/mysong.mp3"</span>);</div><div class="line">intent.setType(<span class="string">"audio/mp3"</span>);</div><div class="line">startActivity(Intent.createChooser(intent, <span class="string">"Choose Email Client"</span>));</div></pre></td></tr></table></figure>
-<p>十、发短信</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Uri uri= Uri.parse(<span class="string">"tel:10086"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">intent.putExtra(<span class="string">"sms_body"</span>, <span class="string">"I come from http://www.android-study.com"</span>);</div><div class="line">intent.setType(<span class="string">"vnd.Android-dir/mms-sms"</span>);</div></pre></td></tr></table></figure>
-<p>十一、直接发短信</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Uri uri= Uri.parse(&quot;smsto://100861&quot;);</div><div class="line">Intent intent = new Intent(Intent.ACTION_SENDTO, uri);</div><div class="line">intent.putExtra(&quot;sms_body&quot;, &quot;3g android http://www.android-study.com&quot;);</div></pre></td></tr></table></figure>
-<p>十二、发彩信</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Uri uri= Uri.parse(<span class="string">"content://media/external/images/media/23"</span>);</div><div class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SEND);</div><div class="line">intent.putExtra(<span class="string">"sms_body"</span>, <span class="string">"3g android http://www.android-study.com"</span>);</div><div class="line">intent.putExtra(Intent.EXTRA_STREAM, uri);</div><div class="line">intent.setType(<span class="string">"image/png"</span>);</div></pre></td></tr></table></figure>
-<p>十三、# Market 相关</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> <span class="comment">//寻找某个应用</span></div><div class="line">Uri uri = Uri.parse(<span class="string">"market://search?q=pname:pkg_name"</span>);</div><div class="line">Intent it = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">startActivity(it);</div><div class="line"><span class="comment">//where pkg_name is the full package path for an application</span></div><div class="line"></div><div class="line"><span class="number">2</span> <span class="comment">//显示某个应用的相关信息</span></div><div class="line">Uri uri = Uri.parse(<span class="string">"market://details?id=app_id"</span>);</div><div class="line">Intent it = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">startActivity(it);</div><div class="line"><span class="comment">//where app_id is the application ID, find the ID</span></div><div class="line"><span class="comment">//by clicking on your application on Market home</span></div><div class="line"><span class="comment">//page, and notice the ID from the address bar</span></div></pre></td></tr></table></figure>
-<p>十四、路径规划</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"http://maps.google.com/maps?f=d&amp;saddr=startLat%20startLng&amp;daddr=endLat%20endLng&amp;hl=en"</span>);</div><div class="line">Intent it = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">startActivity(it);</div><div class="line"><span class="comment">//where startLat, startLng, endLat, endLng are a long with 6 decimals like: 50.123456</span></div></pre></td></tr></table></figure>
-<p>十五、安装指定apk</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setupAPK</span><span class="params">(String apkname)</span></span>&#123;</div><div class="line">    String fileName = Environment.getExternalStorageDirectory() + <span class="string">"/"</span> + apkname;</div><div class="line">    Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW);</div><div class="line">    intent.setDataAndType(Uri.fromFile(<span class="keyword">new</span> File(fileName)), <span class="string">"application/vnd.android.package-archive"</span>);</div><div class="line">    mService.startActivity(intent);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>十六、进入联系人页面</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(); </div><div class="line">intent.setAction(Intent.ACTION_VIEW); </div><div class="line">intent.setData(People.CONTENT_URI); </div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
-<p>十七、查看指定联系人</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Uri personUri = ContentUris.withAppendedId(People.CONTENT_URI, info.id);<span class="comment">// info.id联系人ID </span></div><div class="line">Intent intent = <span class="keyword">new</span> Intent(); </div><div class="line">intent.setAction(Intent.ACTION_VIEW); </div><div class="line">intent.setData(personUri); </div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
-<p>十八、调用相册</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String MIME_TYPE_IMAGE_JPEG = <span class="string">"image/*"</span>; </div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> ACTIVITY_GET_IMAGE = <span class="number">0</span>; </div><div class="line">Intent getImage = <span class="keyword">new</span> Intent(Intent.ACTION_GET_CONTENT); </div><div class="line">getImage.addCategory(Intent.CATEGORY_OPENABLE); </div><div class="line">getImage.setType(MIME_TYPE_IMAGE_JPEG); </div><div class="line">startActivityForResult(getImage, ACTIVITY_GET_IMAGE);</div></pre></td></tr></table></figure>
-<p>十九、调用系统相机应用程序，并存储拍下来的照片</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(MediaStore.ACTION_IMAGE_CAPTURE); </div><div class="line">time = Calendar.getInstance().getTimeInMillis(); </div><div class="line">intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(<span class="keyword">new</span> File(Environment </div><div class="line">.getExternalStorageDirectory().getAbsolutePath()+<span class="string">"/tucue"</span>, time + <span class="string">".jpg"</span>))); </div><div class="line">startActivityForResult(intent, ACTIVITY_GET_CAMERA_IMAGE);</div></pre></td></tr></table></figure>
+<p>然后再运行发现就不调用默认浏览器了，下面为大家讲讲WebViewClient这个类：WebViewClient类中的几个方法在我们平时开发中大量的运用，首先是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public boolean shouldOverrideUrlLoading(WebView view, String url) &#123;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一般情况下我们不需要重写，这个函数有一个返回值，当为false时意思是我们不用管，当前的webview自已加载这个url，当返回为ture时，就让我们自己操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">public void onPageFinished(WebView view, String url) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当页面加载完成时调用，但需要注意的是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * When onPageFinished() is called, the</div><div class="line"> * rendering picture may not be updated yet. To get the notification for the</div><div class="line"> * new Picture, use &#123;@link WebView.PictureListener#onNewPicture&#125;.</div><div class="line"> */</div></pre></td></tr></table></figure>
+<p>也就是渲染图片有可能没有加载完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Notify the host application that the WebView will load the resource</div><div class="line"> * specified by the given url.</div><div class="line"> *</div><div class="line"> * @param view The WebView that is initiating the callback.</div><div class="line"> * @param url The url of the resource the WebView will load.</div><div class="line"> */</div><div class="line">public void onLoadResource(WebView view, String url) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个函数是这要加载资源就会被调用。然后说一下错误处理的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Report an error to the host application. These errors are unrecoverable</div><div class="line"> * (i.e. the main resource is unavailable). The errorCode parameter</div><div class="line"> * corresponds to one of the ERROR_* constants.</div><div class="line"> * @param view The WebView that is initiating the callback.</div><div class="line"> * @param errorCode The error code corresponding to an ERROR_* value.</div><div class="line"> * @param description A String describing the error.</div><div class="line"> * @param failingUrl The url that failed to load.</div><div class="line"> * @deprecated Use &#123;@link #onReceivedError(WebView, WebResourceRequest, WebResourceError)</div><div class="line"> *             onReceivedError(WebView, WebResourceRequest, WebResourceError)&#125; instead.</div><div class="line"> */</div><div class="line">@Deprecated</div><div class="line">public void onReceivedError(WebView view, int errorCode,</div><div class="line">        String description, String failingUrl) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>重写该函数让你的app更加人性化。</p>
+<p>那这里我们又有一个需求：我们要有一个进度条，那我们怎么知道时时的加载进度呢，就不是在WebViewClient类中了，而是在WebChromeClient中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Tell the host application the current progress of loading a page.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param newProgress Current page loading progress, represented by</div><div class="line"> *                    an integer between 0 and 100.</div><div class="line"> */</div><div class="line">public void onProgressChanged(WebView view, int newProgress) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>其中参数newProgress就是加载的时时进度。WebChromeClient中还用一些常用的函数，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Notify the host application of a change in the document title.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param title A String containing the new title of the document.</div><div class="line"> */</div><div class="line">public void onReceivedTitle(WebView view, String title) &#123;&#125;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Notify the host application of a new favicon for the current page.</div><div class="line"> * @param view The WebView that initiated the callback.</div><div class="line"> * @param icon A Bitmap containing the favicon for the current page.</div><div class="line"> */</div><div class="line">public void onReceivedIcon(WebView view, Bitmap icon) &#123;&#125;</div></pre></td></tr></table></figure>
+<p>一个是可以获取网页的title，一个是可以title旁边的icon。</p>
+<p>然后说一下webview缓存问题:有时候我们有缓存的需求，就是在没有网络的情况下，以前可以打开的网页也可以通过缓存文件打开，主要代码为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);</div><div class="line">webSettings.setAppCacheEnabled(true);</div><div class="line">String path = Environment.getExternalStorageDirectory().getAbsolutePath() + &quot;/gefdemoweb&quot;;</div><div class="line">Log.e(null,path);</div><div class="line">webSettings.setAppCachePath(path);</div></pre></td></tr></table></figure>
+<p>第一行设置了缓存模式，第二行设置可以缓存，然后下面设置缓存路径，关于缓存模式有很多种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public static final int LOAD_DEFAULT = -1;//默认模式，当缓存资源是可用的不过期，就使用，否次网络加载</div><div class="line">public static final int LOAD_NORMAL = 0;//This value is obsolete,过时了，不用管</div><div class="line">public static final int LOAD_CACHE_ELSE_NETWORK = 1;//当缓存资源是可用的就使用,即使它是过期的，否次网络加载</div><div class="line">public static final int LOAD_NO_CACHE = 2;//不使用缓存</div><div class="line">public static final int LOAD_CACHE_ONLY = 3;//不使用网络</div></pre></td></tr></table></figure>
+<p>然后说一下按返回键的问题，如果你不做任何设置，按返回键肯定要跳到上一个activity，但是我们想让他返回到上一个加载的网页怎么办：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public boolean onKeyDown(int keyCode, KeyEvent event) &#123;</div><div class="line">    if (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; webView.canGoBack())&#123;</div><div class="line">        webView.goBack();</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return super.onKeyDown(keyCode, event);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>完美解决。</p>
+<p>最后看一下webSetting的其它常用设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">setJavaScriptEnabled(true);  //支持js</div><div class="line">setPluginsEnabled(true);  //支持插件 </div><div class="line">setUseWideViewPort(false);  //将图片调整到适合webview的大小 </div><div class="line">setSupportZoom(true);  //支持缩放 </div><div class="line">setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN); //支持内容重新布局  </div><div class="line">supportMultipleWindows();  //多窗口 </div><div class="line">setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);  //关闭webview中缓存 </div><div class="line">setAllowFileAccess(true);  //设置可以访问文件 </div><div class="line">setNeedInitialFocus(true); //当webview调用requestFocus时为webview设置节点</div><div class="line">webview webSettings.setBuiltInZoomControls(true); //设置支持缩放 </div><div class="line">setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口 </div><div class="line">setLoadWithOverviewMode(true); // 缩放至屏幕的大小</div><div class="line">setLoadsImagesAutomatically(true);  //支持自动加载图片</div></pre></td></tr></table></figure>
       
 
       
@@ -298,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuz8uuk300025sugm5kkcl1b.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzaf3vv00002sugl2uzzfu7.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,18 +303,18 @@
   
 <nav id="article-nav">
   
-    <a href="/cjuz8uukb00045sug13nab183.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/cjuzaf3wh00062sugcdcpdhyl.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Android系统常用权限大全
+          Android开发之Path详解
         
       </div>
     </a>
   
   
-    <a href="/cjuz8uujw00015sug1nyms3ch.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android中图片的三层缓存</div>
+    <a href="/cjuzaf3x6000a2sugrbaujisv.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ViewDragHelper(拖拽)的用法</div>
       <i class="icon-circle-right"></i>
     </a>
   

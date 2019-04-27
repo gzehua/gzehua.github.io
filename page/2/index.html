@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Archives: 2016/6 | zehua的个人博客</title>
+  <title>zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="zehua的个人博客">
-<meta property="og:url" content="http://www.gzehua.cn/archives/2016/06/index.html">
+<meta property="og:url" content="http://www.gzehua.cn/page/2/index.html">
 <meta property="og:site_name" content="zehua的个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -156,74 +156,140 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-Android内存泄漏的8种可能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuzaf3wk00072sugjxh21xj2.html" class="archive-article-date">
-  	<time datetime="2016-06-18T12:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuzaf3wk00072sugjxh21xj2.html">Android系统常用权限大全</a>
+      <a class="article-title" href="/cjuzaf3w800032sugqi35qwud.html">Android内存泄漏的8种可能</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/cjuzaf3w800032sugqi35qwud.html" class="archive-article-date">
+  	<time datetime="2016-05-15T03:32:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    Java是垃圾回收语言的一种，其优点是开发者无需特意<strong>管理内存分配</strong>，降低了应用由于<strong>局部故障(segmentation fault)</strong>导致崩溃，同时防止未释放的内存把<strong>堆栈(heap)</strong>挤爆的可能，所以写出来的代码更为安全。</p>
+<p>不幸的是，在Java中仍存在很多容易导致内存泄漏的<strong>逻辑可能</strong>(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出(out-of-memory，OOM)。</p>
+        
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/cjuzaf3w800032sugqi35qwud.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuzaf3wf00052sug8kz446kr.html" class="archive-article-date">
-  	<time datetime="2016-06-18T11:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Android中的Context详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuzaf3wf00052sug8kz446kr.html">Android常用URI收藏“</a>
+      <a class="article-title" href="/cjuzaf3w600022sug9m07vnha.html">Android中的Context详解</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/cjuzaf3w600022sug9m07vnha.html" class="archive-article-date">
+  	<time datetime="2016-03-16T04:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更有效的使用Context的技巧。</p>
+<p><strong>Context的类型</strong></p>
+<p>并不是所有的context实例都是等价的。根据Android应用的组件不同，你访问的context推向有些细微的差别。</p>
+        
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/cjuzaf3w600022sug9m07vnha.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -245,9 +311,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

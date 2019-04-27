@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Archives: 2016/6 | zehua的个人博客</title>
+  <title>Android中的Context详解 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zehua的个人博客">
-<meta property="og:url" content="http://www.gzehua.cn/archives/2016/06/index.html">
+  <meta name="description" content="​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android中的Context详解">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzaf3w600022sug9m07vnha.html">
 <meta property="og:site_name" content="zehua的个人博客">
+<meta property="og:description" content="​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-27T08:58:23.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zehua的个人博客">
+<meta name="twitter:title" content="Android中的Context详解">
+<meta name="twitter:description" content="​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -154,76 +158,273 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android中的Context详解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuzaf3wk00072sugjxh21xj2.html" class="archive-article-date">
-  	<time datetime="2016-06-18T12:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuzaf3wk00072sugjxh21xj2.html">Android系统常用权限大全</a>
+    <h1 class="article-title" itemprop="name">
+      Android中的Context详解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuzaf3wf00052sug8kz446kr.html" class="archive-article-date">
-  	<time datetime="2016-06-18T11:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
+        
+        <a href="/cjuzaf3w600022sug9m07vnha.html" class="archive-article-date">
+  	<time datetime="2016-03-16T04:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuzaf3wf00052sug8kz446kr.html">Android常用URI收藏“</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    Context可能是Android应用中最常用的元素，而它也可能是最容易误用的。Context对象是如此常见和传递使用，它可能会很容易产生并不是你预期的情形。加载资源、启动一个新的Activity、获取系统服务、获取内部文件路径以及创建view（其实还远不止这些）统统都需要Context对象来完成。我(原文作者)想做的只是给大家提供一些Context是如何工作的见解，以及让大家在应用中更有效的使用Context的技巧。</p>
+<p><strong>Context的类型</strong></p>
+<p>并不是所有的context实例都是等价的。根据Android应用的组件不同，你访问的context推向有些细微的差别。</p>
+<a id="more"></a>
+<ul>
+<li>Application － 是一个运行在你的应用进程中的单例。在Activity或者Service中，它可以通过getApplication()函数获得，或者人和继承于context的对象中，通过getApplicationContext()方法获得。不管你是通过何种方法在哪里获得的，在一个进程内，你总是获得到同一个实例。</li>
+<li>Activity/Service － 继承于ContextWrapper，它实现了与context同样API，但是代理这些方法调用到内部隐藏的Context实例，即我们所知道的基础context。任何时候当系统创建一个新的Activity或者Service实例的时候，它也创建一个新的ContextImpl实例来做所有的繁重的工作。每一个Activity和Service以及其对应的基础context，对每个实例来说都是唯一的。</li>
+<li>BroadcastReciver － 它本身不是context，也没有context在它里面，但是每当一个新的广播到达的时候，框架都传递一个context对象到onReceive()。这个context是一个ReceiverRestrictedContext实例，它有两个主要函数被禁掉：registerReceiver()和bindService()。这两个函数在BroadcastReceiver.onReceive()不允许调用。每次Receiver处理一个广播，传递进来的context都是一个新的实例。</li>
+<li>ContentProvider － 它本身也不是一个Context，但是它可以通过getContext()函数给你一个Context对象。如果ContentProvider是在调用者的的本地（例如，在同一个应用进程），getContext()将返回的是Application单例。然而，如果调用这和ContentProvider在不同的进程的时候，它将返回一个新创建的实例代表这个Provider所运行的包。</li>
+</ul>
+<p><strong>保存引用</strong></p>
+<p>第一个我们需要解决问题是，在一个对象或者类内部保存一个context引用，而它生命周期却超过其保存引用的对象的生命周期。例如，创建一个自定义的单例，它需要一个context来加载资源或者获取ContentProvider，从而保存一个指向当前Activiy或者Service的引用在单例中。</p>
+<p><strong>糟糕的单例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class CustomManager &#123;  </div><div class="line">    private static CustomManager sInstance;  </div><div class="line"></div><div class="line">    public static CustomManager getInstance(Context context) &#123;  </div><div class="line">        if (sInstance == null) &#123;  </div><div class="line">            sInstance = new CustomManager(context);  </div><div class="line">        &#125;  </div><div class="line"></div><div class="line">        return sInstance;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line">    private Context mContext;  </div><div class="line"></div><div class="line">    private CustomManager(Context context) &#123;  </div><div class="line">        mContext = context;  </div><div class="line">    &#125;     </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里的问题在于，我们不知道这个context是从哪里来的，并且如果保存一个最终指向的是Activity或者Servece的引用是并不安全的。这是一个问题，是因为一个单例在类的内部维持一个唯一的静态引用，这意味着我们的对象，以及所有其他它所引用的对象，将永远不能被垃圾回收。假如这个Context是一个Activity，我们将保存与这个Activity相关的所有的view以及其他大的对象，从而造成内存泄漏。</p>
+<p>为了解决这个问题，我们修改单例永远只是保存Application context：</p>
+<p><strong>改善的单例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public class CustomManager &#123;  </div><div class="line">    private static CustomManager sInstance;  </div><div class="line"></div><div class="line">    public static CustomManager getInstance(Context context) &#123;  </div><div class="line">      if (sInstance == null) &#123;  </div><div class="line">          //Always pass in the Application Context  </div><div class="line">          sInstance = new CustomManager(context.getApplicationContext());  </div><div class="line">      &#125;  </div><div class="line"></div><div class="line">      return sInstance;  </div><div class="line">  &#125;  </div><div class="line"></div><div class="line">  private Context mContext;  </div><div class="line"></div><div class="line">  private CustomManager(Context context) &#123;  </div><div class="line">      mContext = context;  </div><div class="line">  &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在这个例子中，我们的Context来自哪里都没有关系，因为我们这里保存引用是安全的。Application Context 本身就是一个单例，所以我们再创建另外一个static引用，不会造成任何内存泄漏。另外一个很好的例子是，在后台线程或者一个等待的Handler中保存Context的引用，也可以使用这样的方法。</p>
+<p>为什么我们不能总是引用Application context呢？正如前面说的，引用Application context永远不用担心内存泄漏的问题。问题的答案，就像我在开始的介绍中说的，是因为不同context并不是等价的。</p>
+<p><strong>Context的能力</strong></p>
+<p>Conext能做的通用操作决定于这个context最初来源于哪里。下表所列的是，在应用中常见的会收到context对象的，以及对应的每种情况，它可以用于哪些地方：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Application</th>
+<th style="text-align:center">Activity</th>
+<th style="text-align:center">Service</th>
+<th style="text-align:center">ContentProvider</th>
+<th style="text-align:center">BroadcastReceiver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">显示Dialog</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">NO</td>
+<td style="text-align:center">NO</td>
+</tr>
+<tr>
+<td style="text-align:center">启动Activity</td>
+<td style="text-align:center">NO1</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO1</td>
+<td style="text-align:center">NO1</td>
+<td style="text-align:center">NO1</td>
+</tr>
+<tr>
+<td style="text-align:center">Layout Inflation</td>
+<td style="text-align:center">NO2</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO2</td>
+<td style="text-align:center">NO2</td>
+<td style="text-align:center">NO2</td>
+</tr>
+<tr>
+<td style="text-align:center">启动Service</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">绑定到Service</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO</td>
+</tr>
+<tr>
+<td style="text-align:center">发送Broadcast</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+<tr>
+<td style="text-align:center">注册BroadcastReceiver</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">NO3</td>
+</tr>
+<tr>
+<td style="text-align:center">加载Resource</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+<td style="text-align:center">YES</td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ol>
+<li>NO1 表示Application context的确可以开始一个Activity，但是它需要创建一个新的task。这可能会满足一些特定的需求，但是在你的应用中会创建一个不标准的回退栈（back stack），这通常是不推荐的或者不是是好的实践。</li>
+<li>NO2 表示这是非法的，但是这个填充（inflation）的确可以完成，但是是使用所运行的系统默认的主题（theme），而不是你app定义的主题。</li>
+<li>NO3 在Android4.2以上，如果Receiver是null的话（这是用来获取一个sticky broadcast的当前 值的），这是允许的。</li>
+</ol>
+<p><strong>用户界面UI</strong></p>
+<p>从前面的表格中可以看到，application context有很多功能并不是合适去做，而这些功能都与UI相关。实际上，只有Activity能够处理所有与UI相关的任务。其他类别的context实例功能都差不多。</p>
+<p>幸运的是，在应用中这三种操作基本上都不需要在Activity范围之外进行，这很可能是android框架故意这么设计的。尝试显示一个使用Aplication context创建的Dialog，或者使用Application context开始一个Activity，系统会抛出一个异常，让你的application崩溃，非常强的告诉你某些地方出了问题。</p>
+<p>一个并不明显的问题是填充布局（inflating layout）。如果你已经读过了我（原文作者）的上一篇文章Layout inflation，你就已经知道它可能是一个非常神秘过程，伴随一些隐藏的行为。使用正确的context关系到其中的一个行为。当你使用Application context来inflate一个布局的时候，框架并不会报错，并返回一个使用系统默认的主题创建一个完美的view给你，而没有考虑你的applicaiton自定义的theme和style。这是因为Acitivity是唯一的绑定了在manifast文件种定义主题的Context。其他的Context实例将会使用系统默认的主题来inflater你的view。导致显示的结果并不是你所希望的。</p>
+<p><strong>规则的路口</strong></p>
+<p>可能有些读者已经得出两个规则互相矛盾的结论。可能有些情况下，在某些Application的设计中，我们可能既必须长期保存一个的引用，并且为了完成与UI相关的工作又必须保存一个Activity。如果出现这种情况，我将会强烈建议你重新考虑你的设计，它将是一个很好的“反框架”教材。</p>
+<p><strong>经验法则</strong></p>
+<p>绝大多数情况下，使用在你的所工作的组建内部能够直接获取的Context。只要这个引用没有超过这个组建的生命周期，你可以安全的保存这个引用。一旦你要保存一个context的引用，它超过了你的Activity或者Service的生命周期范围，甚至是暂时的，你就需要转换你的引用为Application context。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzaf3w600022sug9m07vnha.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/cjuzaf3w800032sugqi35qwud.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android内存泄漏的8种可能
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -246,8 +447,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

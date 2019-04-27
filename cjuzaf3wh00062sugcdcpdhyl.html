@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Archives: 2016/6 | zehua的个人博客</title>
+  <title>Android开发之Path详解 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zehua的个人博客">
-<meta property="og:url" content="http://www.gzehua.cn/archives/2016/06/index.html">
+  <meta name="description" content="​    在自定义控件的时候经常需要在界面上绘制一些不规则的图形或者2D图形，通过Canvas类中提供的drawXXX()方法除了能绘制一些简单规则的图形外它还提供了drawPath()方法以满足复杂图形的绘制需求；drawPath(Path path, Paint paint)方法有两个形参，Path路径 和 Paint画笔；通过Path路径可以描述一个复杂图形的轮廓，最终在Canvas画板中绘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发之Path详解">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzaf3wh00062sugcdcpdhyl.html">
 <meta property="og:site_name" content="zehua的个人博客">
+<meta property="og:description" content="​    在自定义控件的时候经常需要在界面上绘制一些不规则的图形或者2D图形，通过Canvas类中提供的drawXXX()方法除了能绘制一些简单规则的图形外它还提供了drawPath()方法以满足复杂图形的绘制需求；drawPath(Path path, Paint paint)方法有两个形参，Path路径 和 Paint画笔；通过Path路径可以描述一个复杂图形的轮廓，最终在Canvas画板中绘">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-27T08:31:02.567Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zehua的个人博客">
+<meta name="twitter:title" content="Android开发之Path详解">
+<meta name="twitter:description" content="​    在自定义控件的时候经常需要在界面上绘制一些不规则的图形或者2D图形，通过Canvas类中提供的drawXXX()方法除了能绘制一些简单规则的图形外它还提供了drawPath()方法以满足复杂图形的绘制需求；drawPath(Path path, Paint paint)方法有两个形参，Path路径 和 Paint画笔；通过Path路径可以描述一个复杂图形的轮廓，最终在Canvas画板中绘">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -154,76 +158,271 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android开发之Path详解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuzaf3wk00072sugjxh21xj2.html" class="archive-article-date">
-  	<time datetime="2016-06-18T12:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuzaf3wk00072sugjxh21xj2.html">Android系统常用权限大全</a>
+    <h1 class="article-title" itemprop="name">
+      Android开发之Path详解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuzaf3wf00052sug8kz446kr.html" class="archive-article-date">
-  	<time datetime="2016-06-18T11:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
+        
+        <a href="/cjuzaf3wh00062sugcdcpdhyl.html" class="archive-article-date">
+  	<time datetime="2017-03-04T06:20:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuzaf3wf00052sug8kz446kr.html">Android常用URI收藏“</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    在自定义控件的时候经常需要在界面上绘制一些不规则的图形或者2D图形，通过Canvas类中提供的drawXXX()方法除了能绘制一些简单规则的图形外它还提供了drawPath()方法以满足复杂图形的绘制需求；drawPath(Path path, Paint paint)方法有两个形参，Path路径 和 Paint画笔；通过Path路径可以描述一个复杂图形的轮廓，最终在Canvas画板中绘制出来；</p>
+<p><strong>Path类中常用方法</strong></p>
+<a id="more"></a>
+<ol>
+<li><p><strong>reset()</strong></p>
+<p>描述：重置path至初始化时状态，不保留内部数据结构；但是会保留path的填充模式（Filltype）</p>
+</li>
+<li><p><strong>rewind()</strong></p>
+<p>描述：重置path至初始化时状态 ，但是会保留内部数据结构以便重用以及填充模式；</p>
+</li>
+<li><p><strong>set(Path src)</strong></p>
+<p>描述：将一个path赋值给当前的path，当前path的设置会被覆盖掉；</p>
+<p>参数：<br>Path src：目标path；</p>
+</li>
+<li><p><strong>moveTo(float x,float y)</strong></p>
+<p>描述：移动到某个点，下次操作时从该点开始（基于原点坐标系的偏移量）</p>
+<p>参数：<br>float x：目标点X坐标值；<br>float y：目标点Y坐标值；</p>
+</li>
+<li><p><strong>rMoveTo(float x,float y)</strong></p>
+<p>描述：移动到某个点，下次操作时从该点开始（基于当前点坐标系的偏移量）</p>
+<p>参数：<br>float x：目标点相对前一点X轴的偏移量；<br>float y：目标点相对前一点Y轴的偏移量；</p>
+</li>
+<li><p><strong>lineTo(float x,float y)</strong></p>
+<p>描述：绘制上一个点到参数中传入点的path（基于原点坐标系的偏移量）</p>
+<p>参数：<br>float x：目标点X坐标值；<br>float y：目标点Y坐标值；</p>
+</li>
+<li><p><strong>rLineTo(float x,float y)</strong></p>
+<p>描述：绘制上一个点到参数中传入点的path（基于当前点坐标系的偏移量）</p>
+<p>参数：<br>float x：目标点相对前一点X轴的偏移量；<br>float y：目标点相对前一点Y轴的偏移量；</p>
+</li>
+<li><p><strong>quadTo(float x1, float y1, float x2, float y2)</strong></p>
+<p>描述：绘制二阶的贝塞尔曲线 （基于原点坐标系的偏移量）;注意：形参中表面上传入两个点坐标，其实在绘制时还有个起始点</p>
+<p>参数：<br>float x1：点一的X坐标值；<br>float y1：点一的Y坐标值<br>float x2：点二的X坐标值；<br>float y2：点二的Y坐标值；</p>
+</li>
+<li><p><strong>rQuadTo(float x1, float y1, float x2, float y2)</strong></p>
+<p>描述：绘制二阶的贝塞尔曲线 （基于当前点坐标系的偏移量）</p>
+<p>参数：<br>float x1：点一基于起始点X轴的偏移量；<br>float y1：点一基于起始点Y轴的偏移量<br>float x2：点二基于点一X轴的偏移量；<br>float y2：点二基于点一Y轴的偏移量；</p>
+</li>
+<li><p><strong>cubicTo(float x1, float y1, float x2, float y2,float x3, float y3)</strong></p>
+<p>描述：绘制三阶的贝塞尔曲线 （基于原点坐标系的偏移量）</p>
+<p>参数：和quadTo类似，多加点三</p>
+</li>
+<li><p><strong>rCubicTo(float x1, float y1, float x2, float y2,float x3, float y3)</strong></p>
+<p>绘制三阶的贝塞尔曲线 （基于当前点坐标系的偏移量）</p>
+<p>参数：和rQuadTo类似，多加点三</p>
+</li>
+<li><p><strong>addPath(Path src, float dx, float dy)</strong></p>
+<p>描述：添加path到当前path</p>
+<p>参数：<br>Path src：目标path；<br>float dx：X轴偏移量；<br>float dy：Y轴偏移量；</p>
+</li>
+<li><p><strong>addOval(RectF oval, Direction dir)</strong></p>
+<p>描述：添加椭圆到当前path</p>
+<p>参数：<br>RectF oval：生成椭圆的矩形；<br>Direction dir：生成方向，与矩形一样，分为顺时针与逆时针</p>
+</li>
+<li><p><strong>addCircle(float x, float y, float radius, Direction dir)</strong></p>
+<p>描述：添加圆到当前path</p>
+<p>参数：<br>float x：圆心点X坐标值；<br>float y：圆心点Y坐标值<br>float radius：半径；<br>Direction dir：生成方向，与矩形一样，分为顺时针与逆时针；</p>
+</li>
+<li><p><strong>addArc(RectF oval, float startAngle, float sweepAngle)</strong></p>
+<p>描述：添加圆弧到当前path</p>
+<p>参数：<br>RectF oval：弧是椭圆的一部分，这个参数就是生成椭圆所对应的矩形；<br>float startAngle：开始的角度，X轴正方向为0度<br>float sweepAngel：持续的度数；</p>
+</li>
+<li><p><strong>arcTo(RectF oval, float startAngle, float sweepAngle,boolean forceMoveTo)</strong></p>
+<p>描述：添加圆弧到当前path</p>
+<p>参数：<br>RectF oval：弧是椭圆的一部分，这个参数就是生成椭圆所对应的矩形；<br>float startAngle：开始的角度，X轴正方向为0度<br>float sweepAngel：持续的度数；<br>boolean forceMoveTo：是否从圆弧的起始点开始绘制；</p>
+<p><strong>arcTo和addArc区别</strong>：addArc函数只是绘出给定的弧线；而ArcTo函数在工作时将会从画笔原来所在点开始绘制一条直线到弧线的开始点，再绘制弧线；当arcTo函数forceMoveTo传入true时和addArc函数一至；</p>
+</li>
+<li><p><strong>addRoundRect(RectF oval, float rx, float ry, Direction dir)</strong></p>
+<p>描述：绘制圆角矩形路径</p>
+<p>参数：<br>RectF oval：所绘制的矩形；<br>float rx：所产生圆角的椭圆的横轴半径<br>float ry：所产生圆角的椭圆的纵轴半径；<br>Direction dir：生成方向，与矩形一样，分为顺时针与逆时针；</p>
+</li>
+<li><p><strong>addRect(RectF,Direction)</strong></p>
+<p>描述：添加矩形到当前path</p>
+<p>参数：<br>RectF oval：所绘制的矩形；<br>Direction dir：生成方向，分为顺时针与逆时针；</p>
+</li>
+<li><p><strong>setLastPoint(float x,float y)</strong></p>
+<p>描述：设置最后一个点的位置;</p>
+<p>参数：<br>float x：目标点X轴坐标值；<br>float y：目标点Y轴坐标值；</p>
+</li>
+<li><p><strong>path1.op(Path path2, Op op)/path1.op(Path path2, Path path3,Op op)</strong></p>
+<p>描述：对两个path1和path2进行布尔值运行</p>
+<p>参数：op(Path path1, Op op)</p>
+<p>Path path1：目标path1；<br>Op op：运算方式；<br>运算结果结果保存在path1中</p>
+<p>描述：对两个path2和path3进行布尔值运行</p>
+<p>参数：op(Path path1, Path path2, Path path3,Op op)<br>Path path1：目标path2；<br>Path path2：目标path3；<br>Op op：运算方式；<br>运算结果结果保存在path1中；</p>
+<p><strong>运算方式：</strong><br>DIFFERENCE：减去Path2后Path1区域剩下的部分<br>INTERSECT：保留Path2 和 Path1 共同的部分<br>UNION：保留Path1 和 Path 2<br>XOR：保留Path1 和 Path2 还有共同的部分<br>REVERSE_DIFFERENCE：减去Path1后Path2区域剩下的部分</p>
+</li>
+<li><p><strong>computeBounds(RectF bounds, boolean exact)</strong></p>
+<p>描述：计算path所在区域，并将结果写入bounds，如果整个path只包含0或1个点，将返回(0,0,0,0)</p>
+<p>参数：<br>RectF bounds：用于存储path所在区域的矩形；<br>boolean exact：computeBounds方法中未使用该参数（随便传）；</p>
+</li>
+<li><p><strong>setFillType(FillType ft)</strong></p>
+<p>描述：填充模式设置</p>
+<p>参数：<br>FillType ft：填充模式的枚举；</p>
+<p><strong>填充模式:</strong><br>WINDING模式：取Path所有所在的区域 – 默认的模式<br>EVEN_ODD模式：取Path所在不相交的区域<br>INVERSE_WINDING模式：取path所有未占的区域<br>INVERSE_EVEN_ODD模式：取path所有未占和相交的区域</p>
+</li>
+<li><p><strong>transform(Matrix matrix, Path dst)</strong></p>
+<p>描述：矩阵变化</p>
+<p>参数：<br>Matrix matrix：矩阵；<br>Path dst：需要矩阵变化的path；</p>
+</li>
+<li><p><strong>offset(float dx, float dy)/offset(float dx, float dy,Path dst)</strong></p>
+<p>描述：对当前路径进行偏移</p>
+<p>参数：<br>float dx：X轴的偏移量；<br>float dy：Y轴的偏移量；<br>Path dst：dst存储偏移后的结果；如果 dst 为null则直接在原path中修改；</p>
+</li>
+</ol>
+<p><strong>效果演示</strong></p>
+<p>效果 <a href="https://download.csdn.net/download/weixin_37223042/11147996" target="_blank" rel="external">demo</a> </p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzaf3wh00062sugcdcpdhyl.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/cjuzaf3x200092sugrien9qhl.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SetContentView与LayoutInflater加载布局的源码分析
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/cjuzaf3vv00002sugl2uzzfu7.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android中WebView基本使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -246,8 +445,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

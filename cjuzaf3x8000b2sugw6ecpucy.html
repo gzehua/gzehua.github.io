@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>Archives: 2016/6 | zehua的个人博客</title>
+  <title>Widget的基本使用 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zehua的个人博客">
-<meta property="og:url" content="http://www.gzehua.cn/archives/2016/06/index.html">
+  <meta name="description" content="1.创建Widget的步骤 1public class MyWidget extends AppWidgetProvider &amp;#123;	&amp;#125;  Widget就是一个广播接收者，所以在清单文件中进行配置  12345678&amp;lt;receiver android:name=&quot;com.itheima.widget.MyWidget&quot; &amp;gt;            &amp;lt;inten">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Widget的基本使用">
+<meta property="og:url" content="http://www.gzehua.cn/cjuzaf3x8000b2sugw6ecpucy.html">
 <meta property="og:site_name" content="zehua的个人博客">
+<meta property="og:description" content="1.创建Widget的步骤 1public class MyWidget extends AppWidgetProvider &amp;#123;	&amp;#125;  Widget就是一个广播接收者，所以在清单文件中进行配置  12345678&amp;lt;receiver android:name=&quot;com.itheima.widget.MyWidget&quot; &amp;gt;            &amp;lt;inten">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-27T09:10:31.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zehua的个人博客">
+<meta name="twitter:title" content="Widget的基本使用">
+<meta name="twitter:description" content="1.创建Widget的步骤 1public class MyWidget extends AppWidgetProvider &amp;#123;	&amp;#125;  Widget就是一个广播接收者，所以在清单文件中进行配置  12345678&amp;lt;receiver android:name=&quot;com.itheima.widget.MyWidget&quot; &amp;gt;            &amp;lt;inten">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -154,76 +158,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Widget的基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuzaf3wk00072sugjxh21xj2.html" class="archive-article-date">
-  	<time datetime="2016-06-18T12:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuzaf3wk00072sugjxh21xj2.html">Android系统常用权限大全</a>
+    <h1 class="article-title" itemprop="name">
+      Widget的基本使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/cjuzaf3wf00052sug8kz446kr.html" class="archive-article-date">
-  	<time datetime="2016-06-18T11:43:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-18</time>
+        
+        <a href="/cjuzaf3x8000b2sugw6ecpucy.html" class="archive-article-date">
+  	<time datetime="2019-04-27T09:03:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/cjuzaf3wf00052sug8kz446kr.html">Android常用URI收藏“</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>   1.创建Widget的步骤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">public class MyWidget extends AppWidgetProvider &#123;	&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>Widget就是一个广播接收者，所以在清单文件中进行配置</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">receiver</span> <span class="attr">android:name</span>=<span class="string">"com.itheima.widget.MyWidget"</span> &gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.appwidget.action.APPWIDGET_UPDATE"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line"><span class="tag">                <span class="attr">android:name</span>=<span class="string">"android.appwidget.provider"</span></span></div><div class="line"><span class="tag">                <span class="attr">android:resource</span>=<span class="string">"@xml/example_appwidget_info"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">receiver</span>&gt;</span></div></pre></td></tr></table></figure>
+ <a id="more"></a>
+<p>android:name 处配置全类名<br>android:resource 处配置一个Widget的描述文件</p>
+<ol>
+<li>描述文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;appwidget-provider xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">		    android:initialLayout=&quot;@layout/test&quot; //布局文件</div><div class="line">		    android:minHeight=&quot;40dp&quot;				</div><div class="line">		    android:minWidth=&quot;40dp&quot;</div><div class="line">		    android:updatePeriodMillis=&quot;86400000&quot; &gt;</div><div class="line">		&lt;/appwidget-provider&gt;</div></pre></td></tr></table></figure>
+<p>2.手机中找不到Widget的解决方法</p>
+<ol>
+<li>应用安装到了SD卡中</li>
+<li>卸载掉手机上的应用，clean下工程，重新安装</li>
+</ol>
+<p>3.更新Widget</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>. 获取AppWidgetManager对象</div><div class="line">	AppWidgetManager awm=AppWidgetManager.getInstance(Context context);</div><div class="line">	<span class="number">2</span>. 创建RemoteViews关联widget布局文件并操作widget的控件</div><div class="line">	RemoteViews views = <span class="keyword">new</span> RemoteViews(getPackageName(), <span class="keyword">int</span> layoutId);</div><div class="line">	views.setTextViewText(<span class="keyword">int</span> viewId,CharSequence text); <span class="comment">//给对应id的TextView设置文本</span></div><div class="line">	views.setImageViewResource(<span class="keyword">int</span> viewId, <span class="keyword">int</span> srcId); <span class="comment">//给对应ID的ImageView设置图片</span></div><div class="line">	</div><div class="line">	<span class="comment">//给对应id的ListView设置适配器，适配器为一个继承RemoteViewsService的服务，</span></div><div class="line">	<span class="comment">//该服务要返回一个RemoteViewsFactory，这个RemoteViewsFactory里就有getCount()</span></div><div class="line">	<span class="comment">//和getViewAt(position)的方法了，同BaseAdapter</span></div><div class="line">	views.setRemoteAdapter(<span class="keyword">int</span> viewId, Intent intent);</div><div class="line">	</div><div class="line">	<span class="number">3</span>. 执行更新Widget动作</div><div class="line">	awm.updateAppWidget(<span class="keyword">new</span> ComponentName(getApplicationContext()，MyWidget.class), views);</div></pre></td></tr></table></figure>
+<p>4.Widget的生命周期</p>
+<ol>
+<li>onEnable()：第一次widget被创建，初始化工作</li>
+<li>onDisable()：最后一个widget被销毁的时候，擦屁股工作</li>
+<li>onUpdate()：每当widget被创建的时候，以及updatePeriodMillis时间到的时候</li>
+<li>onDelete()：每当widget被删除的时候调用</li>
+<li>onAppWidgetOptionsChanged()：当widget被改变大小</li>
+<li>onReceive()：其他是声明周期事件都是通过onReceive分发的</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuzaf3x8000b2sugw6ecpucy.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/cjuzaf3wr00082sugsggzs8ah.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Handler消息机制</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -246,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
