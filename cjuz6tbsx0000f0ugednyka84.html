@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.gzehua.cn">
-  <title>zehua的个人博客</title>
+  <title>Android内存泄漏的8种可能 | zehua的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: Android内存泄漏的8种可能date: 2016-05-15 11:32:53tags: ​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(log">
+  <meta name="description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zehua的个人博客">
-<meta property="og:url" content="http://www.gzehua.cn/cjuz6pjge0000ngug56fawvek.html">
+<meta property="og:title" content="Android内存泄漏的8种可能">
+<meta property="og:url" content="http://www.gzehua.cn/cjuz6tbsx0000f0ugednyka84.html">
 <meta property="og:site_name" content="zehua的个人博客">
-<meta property="og:description" content="title: Android内存泄漏的8种可能date: 2016-05-15 11:32:53tags: ​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(log">
+<meta property="og:description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T06:59:42.780Z">
+<meta property="og:updated_time" content="2019-04-27T07:32:08.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zehua的个人博客">
-<meta name="twitter:description" content="title: Android内存泄漏的8种可能date: 2016-05-15 11:32:53tags: ​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(log">
+<meta name="twitter:title" content="Android内存泄漏的8种可能">
+<meta name="twitter:description" content="​    Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。 不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出">
   
     <link rel="alternative" href="/atom.xml" title="zehua的个人博客" type="application/atom+xml">
   
@@ -161,10 +161,24 @@
             <article id="post-Android内存泄漏的8种可能" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android内存泄漏的8种可能
+    </h1>
+  
+
+        
+        <a href="/cjuz6tbsx0000f0ugednyka84.html" class="archive-article-date">
+  	<time datetime="2016-05-15T03:32:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-15</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: Android内存泄漏的8种可能<br>date: 2016-05-15 11:32:53<br>tags:</p>
-<p>​    Java是垃圾回收语言的一种，其优点是开发者无需特意<strong>管理内存分配</strong>，降低了应用由于<strong>局部故障(segmentation fault)</strong>导致崩溃，同时防止未释放的内存把<strong>堆栈(heap)</strong>挤爆的可能，所以写出来的代码更为安全。</p>
+        <p>​    Java是垃圾回收语言的一种，其优点是开发者无需特意<strong>管理内存分配</strong>，降低了应用由于<strong>局部故障(segmentation fault)</strong>导致崩溃，同时防止未释放的内存把<strong>堆栈(heap)</strong>挤爆的可能，所以写出来的代码更为安全。</p>
 <p>不幸的是，在Java中仍存在很多容易导致内存泄漏的<strong>逻辑可能</strong>(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出(out-of-memory，OOM)。</p>
 <p>一般内存泄漏(traditional memory leak)的原因是：当该对象的所有引用都已经释放了，对象仍未被释放。（译者注：<code>Cursor</code>忘记关闭等）<br>逻辑内存泄漏(logical memory leak)的原因是：当应用不再需要这个对象，当仍未释放该对象的所有引用。</p>
 <p><strong>如果持有对象的强引用，垃圾回收器是无法在内存中回收这个对象。</strong></p>
@@ -275,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuz6pjge0000ngug56fawvek.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.gzehua.cn/cjuz6tbsx0000f0ugednyka84.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,11 +303,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/cjuz6pjgt0004ngugzr95e87s.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SetContentView与LayoutInflater加载布局的源码分析</div>
-      <i class="icon-circle-right"></i>
+    <a href="/cjuz6tbt80001f0ug7o2dnxsk.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android中图片的三层缓存
+        
+      </div>
     </a>
+  
   
 </nav>
 
